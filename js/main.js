@@ -1,7 +1,13 @@
 const links = [{
     label: "Week1 notes",
     url: "W01/index.html"
-}]
+}, {
+    label: "Week2 notes",
+    url: "W01/index.html"
+}, {
+    label: "Week3 notes",
+    url: "W01/index.html"
+}];
 
 function createOL(array) {
     // Create list element
