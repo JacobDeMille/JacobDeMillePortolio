@@ -6,12 +6,17 @@ const links = [{
 const list = document.querySelector("ol");
 
 for (const item of links) {
+    // Create list element
     const li = document.createElement('li');
+    // Create list item
     const a = document.createElement('a');
+    // Set the Contents
     a.setAttribute('href', item.url);
     a.textContent = item.label;
+    // Add to the list
     li.appendChild(a);
 
+    // Add item to the ol list
     list.appendChild(li);
 }
 
