@@ -1,6 +1,6 @@
 const links = [{
     label: "Week1 notes",
-    url: "W01/#"
+    url: "W01/"
 }];
 
 const list = document.querySelector("ol");
