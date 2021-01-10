@@ -21,6 +21,9 @@ for (const item of links) {
     ol.appendChild(li);
 }
 
+// I like the way this function works but I am going to be working on this and making work better
+// with what I am doing as we continue on in the course
+
 // function createOL(array) {
 //     // Create list element
 //     var list = document.getElementById("list");
