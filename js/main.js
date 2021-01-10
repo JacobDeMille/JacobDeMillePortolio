@@ -9,7 +9,7 @@ const links = [{
     url: "W02/"
 }];
 
-const ol = document.querySelector("ol");
+const list = document.querySelector("ol");
 
 for (const item of links) {
     const li = document.createElement('li');
@@ -18,7 +18,7 @@ for (const item of links) {
     a.textContent = item.label;
     li.appendChild(a);
 
-    ol.appendChild(li);
+    list.appendChild(li);
 }
 
 // I like the way this function works but I am going to be working on this and making work better
