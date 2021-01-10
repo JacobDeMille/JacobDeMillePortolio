@@ -1,0 +1,40 @@
+body {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, h2 {
+    text-align: center;
+  font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    background-color: rgba(100,100,100,0.2);
+}
+
+ol {
+  margin: 2em;
+  padding: 0;
+}
+
+li {
+	display: grid;
+  padding: .5em 0;
+  align-items: center;
+}
+
+li a {
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* 
+Element separation from code my ui
+Thank you for adding this into your code Bro Blazzard
+I have bookmarked this page now and I hope that it will 
+bring me tons of insperation for this class and beyond
+*/
+li + li {
+    border-top: 1px solid slateblue;
+  }
