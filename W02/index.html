@@ -32,6 +32,39 @@
     <p>To create <b>Arrays</b> you can use either array literals <em>"ex: const myArray = [];"</em> or the array constructor function <em>"ex: const myArrya = new Array();"</em>. It is preferable to use array literls over array constructor to use less typing. </p>
     <p><b>Maps</b> are a type of list with key value pairs, similar to 'dictionaries' in other programming languages. Maps can use any data type as a key. At this time there is no literal way to creat a map, <em>"ex: const romanNumerals = new Map();"</em></p>
     <b><p>This symbol ( => ) is known as a 'hash rocket'.</p></b>
+    <h2>Chapter 4</h2>
+    <p>There are several different ways to declare a function, it is not recommended to declare functions using the constructor method as this can cause unexpected errors. 
+        <ul>
+            <li>
+                <h4>Function() Declaration</h4>
+               <p>function hello(){
+                console.log('Hello World!');
+            }</p>
+        </li>
+            <li>
+                <h4>Function() Expression</h4>
+                <p>const goodbye = function(){
+                console.log('Goodbye World!');
+            };</p>
+        </li>
+            <li>
+                <h4>Function() Constructor</h4>
+                <p>const hi = new Function('console.log("Hi World!");');</p>
+        </li>
+        </ul>
+        
+    </p>
+    <p>In ES6 there is a new way to declare a function, it is called the <em>arrow</em> syntax, the arrow symbol is also know as a <b>'hash rocket'</b><br><em><b>"ex: const square = x => x*x;"</b></em></p>
+    <p>
+        <h3>Advantages of Arrow Functions</h3>
+        <ul>
+            <li>They are much less verbose than normal function declarations.</li>
+            <li>Single parameters don't need putting into parentheses.</li>
+            <li>The body of the function doesn't need placing inside a block if it's only one line.</li>
+            <li>The return keyword isn't required if the return statement is the only statement in the body of the function.</li>
+            <li>They don't bind their own value of this to the function (we'll see why this is a particularly useful property when we cover objects later in the book).</li>
+        </ul>
+    </p>
 </body>
 <script src="main.js"></script>
 </html>
