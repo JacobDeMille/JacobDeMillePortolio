@@ -3,6 +3,10 @@ const links = [{
     url: "W01/"
 },
 {
+    label: "Quiz Ninja Project",
+    url: "quizninja/"
+},
+{
     label: "Week 02 Notes",
     url: "W02/"
 }];
