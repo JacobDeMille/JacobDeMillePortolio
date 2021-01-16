@@ -9,6 +9,9 @@ const links = [{
 {
     label: "Week 02 Notes",
     url: "W02/"
+}, {
+    label: "Drum Kit Exercises from JavaScript30",
+    url: "javascript-drumkit/"
 }];
 
 const list = document.querySelector("ol");
