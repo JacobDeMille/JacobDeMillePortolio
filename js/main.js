@@ -15,6 +15,10 @@ const links = [{
     url: "W02/"
 }, 
 {
+    label: "Week 2 Team Activity",
+    url: "W02/w02-team-activity.html"
+},
+{
     label: "Drum Kit Exercises from JavaScript30",
     url: "javascript-drumkit/"
 }];
