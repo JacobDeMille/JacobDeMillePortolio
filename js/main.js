@@ -5,11 +5,16 @@ const links = [{
 {
     label: "Quiz Ninja Project",
     url: "quizninja/"
+}, 
+{
+    label: "Local Storage Exercise",
+    url: "local-storage/"
 },
 {
     label: "Week 02 Notes",
     url: "W02/"
-}, {
+}, 
+{
     label: "Drum Kit Exercises from JavaScript30",
     url: "javascript-drumkit/"
 }];
