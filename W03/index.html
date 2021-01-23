@@ -99,6 +99,20 @@ const pattern = /[a-zA-Z]+ing$/;
 const pattern = new RegExp('[a-zA-Z]+ing');</code>
         </pre>
 
+        <h2>Chapter 6: The DOM</h2>
+        <p>The DOM stands for <b>"The Document Object Model"</b> and it allows you to access a web page and enable 
+            interations with the page. The DOM is a collection of nodes that form a tree-like structure.
+            Everything on the wepage is treated as a node by the DOM. Everything in the document is a child of the 
+            root node, the HTML tag. The DOM is <em>Language agnostic</em> so it may be used in any programming language. </p>
+            <h4>Getting Elelments</h4>
+            <p>To get an element from the document you use the <em>documnt</em> key word. You can use this with diferent getters to 
+                get specific elements, such as <b>getElementById(), getElementsByClassName(), getElementByTagName(), querySelector(), and querySelectorAll()</b></p>
+            <p>ID: Each Id selector should be unique to just one element. getElementById() is the most commonly used method of accessing elements on a web page.</p>
+            <p>Query Selectors: querySelector() method allows you to use CSS notation in order to find the 
+                <em>first</em> element that matches a CSS selector. querySelectorAll() will return a node list
+                of <em>all</em> the elements that mat the CSS selector. 
+            </p>
+
     <script>
         const spiderman = {
             name: 'Spiderman',
