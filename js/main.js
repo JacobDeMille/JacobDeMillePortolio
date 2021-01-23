@@ -23,6 +23,10 @@ const links = [{
     url: "javascript-drumkit/"
 },
 {
+    label: "Week 03 Notes",
+    url: "W02/notes.html"
+},
+{
     label: "JavaScript Calculator using 'this'",
     url: "W03/calculator.html"
 }];
