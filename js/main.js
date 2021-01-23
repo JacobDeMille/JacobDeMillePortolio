@@ -4,11 +4,11 @@ const links = [{
 },
 {
     label: "Quiz Ninja Project",
-    url: "quizninja/"
+    url: "coding-exercises/quizninja/"
 }, 
 {
     label: "Local Storage Exercise",
-    url: "local-storage/"
+    url: "coding-exercises/local-storage/"
 },
 {
     label: "Week 02 Notes",
@@ -20,7 +20,7 @@ const links = [{
 },
 {
     label: "Drum Kit Exercises from JavaScript30",
-    url: "javascript-drumkit/"
+    url: "coding-exercises/javascript-30/javascript-drumkit/"
 },
 {
     label: "Week 03 Notes",
