@@ -15,10 +15,21 @@
         becuase they can be definded without the need of createing a class first. The easiest and recommended way to
         declare an object is using the object literal notation </p>
 
-    <pre><code>const spiderman = {
-    name: "Spiderman", 
-    realName: "Peter Parker"
-};</code></pre>
+    <pre>
+<code>const spiderman = {
+    name: 'Spiderman',
+    'real name': 'Peter Parker',
+    height: 178,
+    weight: 76,
+    hero: true,
+    villain: false,
+    allies: ['IronMan','Captain America', 'The Falcon'],
+    swing() {
+        return 'Thwip, Thwip!';
+    },
+    catchPhrase: "Your friendly neighboorhood Spiderman!"
+};</code>
+</pre>
 
     <p>The parts that are in the object are called <b>properties</b>, and if a property is a function it is known as a
         method.</p>
@@ -29,9 +40,66 @@
     } 
 };</code></pre>
 
-        <p></p>
+        <p>There are several ways to find the properties of an Object. You can use a for loop to log them in the console, and with ES2017 you can 
+            use the Object.keys() method to get just the keys or you can use the Object.values to get just the values.
+        </p>
+        <pre>
+<code>  //log for just the keys of spiderman
+for(const value of Object.key(spiderman)) {
+    console.log(key);
+}
+    // log for just the values of spiderman
+for(const value of Object.values(spiderman)) {
+    console.log(value);
+}
+    // log for entries, or the key value pairs
+for(const [key,value] of Object.entries(spiderman)) {
+    console.log(`${key}: ${value}`);
+}
+    // Opn console log to see these for loops output</code>
+        </pre>
+        <h3>Objects as Parameters</h3>
+        <p>Objects can be used as parameteres for functions, </p>
+        <pre>
+<code>function hello(name, catchPhrase) {
+    console.log(`Hi! My name is ${name} and I'm ${catchPhrase}`);
+}
+hello(spiderman['real name'], spiderman['catchPhrase'])</code>
+        </pre>
 
-    <script src="main.js"></script>
+    <script>
+        const spiderman = {
+            name: 'Spiderman',
+            'real name': 'Peter Parker',
+            height: 178,
+            weight: 76,
+            hero: true,
+            villain: false,
+            allies: ['IronMan','Captain America', 'The Falcon'],
+            swing() {
+                return 'Thwip, Thwip!';
+            },
+            catchPhrase: "Your friendly neighboorhood Spiderman!"
+        };
+
+        for(const key in spiderman) {
+            if(spiderman.hasOwnProperty(key)) {
+                console.log(key+":"+spiderman[key]);
+            }
+        }
+        // log for just the values of superman
+        for(const value of Object.values(spiderman)) {
+            console.log(value);
+        }
+        // log for entries, or the key value pairs, in the superman object
+        for(const [key,value] of Object.entries(spiderman)) {
+            console.log(`${key}: ${value}`);
+        }
+        function hello({name, catchPhrase}) {
+            console.log(`Hi! My name is ${name} and I'm ${catchPhrase}`);
+        }
+        hello({name = spiderman['real name'], catchPhrase = spiderman['catchPhrase']});
+    </script>
 </body>
 
 </html>
