@@ -10,3 +10,11 @@ h1, h2, h3, h4, h5 {
 p, ul {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+    width: 300px;
+}
