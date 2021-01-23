@@ -93,7 +93,7 @@ const game = {
     },
     gameOver() {
         alert(`Game Over, you scored ${this.score} point${this.score !== 1 ? 's': ''}`);
-        document.getElementById("score").innerHTML = this.score;
+        document.getElementById("score").innerHTML = `Score ${this.score}`;
     }
 }
 

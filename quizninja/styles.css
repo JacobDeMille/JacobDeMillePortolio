@@ -18,7 +18,7 @@ body{
     -moz-box-shadow: 4px 4px 11px 3px rgba(0,0,0,0.3);
     box-shadow: 4px 4px 11px 3px rgba(0,0,0,0.3);
 }
-h1{
+h1,h2{
     color: #611BBD;
     font-family: 'Baloo Da', cursive;
     font-weight: 900;
