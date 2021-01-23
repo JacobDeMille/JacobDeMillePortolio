@@ -58,13 +58,14 @@ for(const [key,value] of Object.entries(spiderman)) {
 }
     // Opn console log to see these for loops output</code>
         </pre>
+        
         <h3>Objects as Parameters</h3>
-        <p>Objects can be used as parameteres for functions, </p>
+        <p>Objects can be used as parameteres for functions, this allows the arguments to be provided by and in any order.</p>
         <pre>
-<code>function hello(name, catchPhrase) {
+<code>function hello({name, catchPhrase}) {
     console.log(`Hi! My name is ${name} and I'm ${catchPhrase}`);
 }
-hello(spiderman['real name'], spiderman['catchPhrase'])</code>
+hello({catchPhrase: spiderman['catchPhrase'], name: spiderman['real name']});
         </pre>
 
     <script>
@@ -98,7 +99,7 @@ hello(spiderman['real name'], spiderman['catchPhrase'])</code>
         function hello({name, catchPhrase}) {
             console.log(`Hi! My name is ${name} and I'm ${catchPhrase}`);
         }
-        hello({name = spiderman['real name'], catchPhrase = spiderman['catchPhrase']});
+        hello({catchPhrase: spiderman['catchPhrase'], name: spiderman['real name']});
     </script>
 </body>
 
