@@ -68,6 +68,30 @@ for(const [key,value] of Object.entries(spiderman)) {
 hello({catchPhrase: spiderman['catchPhrase'], name: spiderman['real name']});
         </pre>
 
+        <h3>JSON</h3>
+        <p>JSON stands for JavaScript Object Notation, it is a very popular data-storage format. One thing that I think is awesome
+            about JSON is that it can be used by not just JavaScript but a lot of other programming languages as well. 
+        </p>
+        <pre>
+<code>const laptop = '{"brand": "Lenovo", "model": "Legion", '
+    "series": "7i", "type": "Gaming", "specs": {"cpu": "Intel i7", 
+    "gpu": "Nvidia RTX 2060"}}'</code>
+        </pre>
+        <p>This object in it's current form is not yet a JSON, to convert it to a JSON you need to parse the string</p>
+        <pre>
+<code>JSON.parse(laptop);</code>
+        </pre>
+        <p>You can also turn a JSON back into a string object by using the stringify() method</p>
+        <pre>
+<code>JSON.stringify(laptop);</code>
+        </pre>
+        <h3>Math and Date</h3>
+        <p>There are functions built into the Math Object and the Date Object. One thing that is new to me is that there are getters and setters 
+            associated with the Date Object. Getters and setters are very handy to and good to know for the future.
+        </p>
+        <h3>RegExp</h3>
+        <p>Regular expression, or <em>RegExp</em> for short, is a patter that is used to search strings for matches to the pattern.</p>
+
     <script>
         const spiderman = {
             name: 'Spiderman',
@@ -100,6 +124,10 @@ hello({catchPhrase: spiderman['catchPhrase'], name: spiderman['real name']});
             console.log(`Hi! My name is ${name} and I'm ${catchPhrase}`);
         }
         hello({catchPhrase: spiderman['catchPhrase'], name: spiderman['real name']});
+
+        const laptop = '{"brand": "Lenovo", "model": "Legion", "series": "7i", "type": "Gaming", "specs": {"cpu": "Intel i7", "gpu": "Nvidia RTX 2060"}}'
+        JSON.parse(laptop);
+        console.log(laptop);
     </script>
 </body>
 
