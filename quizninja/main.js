@@ -25,36 +25,75 @@
 
 // Code from chapter 4
 
+// const quiz = [
+//     // This is a map of all the questions and thier answers 
+//     ["What is Superman's real name?","Clark Kent"],
+//     ["What is Wonder Woman's real name?","Diana Prince"],
+//     ["What is Batman's real name?","Bruce Wayne"]
+// ];
+
+// function start(quiz){
+//     let score = 0;
+//     // main game loop
+//     for(const [question,answer] of quiz){
+//         const response = ask(question);
+//         check(response,answer);
+//     }
+//     // end of main game loop
+//     gameOver();
+//     // function declarations
+//     function ask(question){
+//         return prompt(question);
+//     }
+//     function check(response,answer){
+//         // added .toLowerCase() method to ensure you are not marked wrong by forgetting to capitolize the fist letter.
+//         if(response.toLowerCase() === answer.toLowerCase()){
+//         alert('Correct!');
+//         score++;
+//         } else {
+//         alert(`Wrong! The correct answer was ${answer}`);
+//         }
+//     }
+//     function gameOver(){
+//         alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);
+//     }
+// }
+    // Code from Chapter 5
 const quiz = [
-    // This is a map of all the questions and thier answers 
-    ["What is Superman's real name?","Clark Kent"],
-    ["What is Wonder Woman's real name?","Diana Prince"],
-    ["What is Batman's real name?","Bruce Wayne"]
-];
-function start(quiz){
-    let score = 0;
-    // main game loop
-    for(const [question,answer] of quiz){
-        const response = ask(question);
-        check(response,answer);
-    }
-    // end of main game loop
-    gameOver();
-    // function declarations
-    function ask(question){
-        return prompt(question);
-    }
-    function check(response,answer){
-        // added .toLowerCase() method to ensure you are not marked wrong by forgetting to capitolize the fist letter.
-        if(response.toLowerCase() === answer.toLowerCase()){
-        alert('Correct!');
-        score++;
-        } else {
-        alert(`Wrong! The correct answer was ${answer}`);
+    {name: "Spiderman", realName: "Peter Parker"},
+    {name: "Iron Man", realName: "Tony Stark"},
+    {name: "Hulk", realName: "Bruce Banner"},
+    {name: "Thor", realName: "Thor"},
+]
+
+const game = {
+    start(quiz){
+        this.questions = [...quiz];
+        this.score = 0;
+        // Main loop
+        for(const question of this.questions){
+            this.question = question;
+            this.ask();
         }
-    }
-    function gameOver(){
-        alert(`Game Over, you scored ${score} point${score !== 1 ? 's' : ''}`);
+        this.gameOver();
+    },
+    ask(){
+        const question = `What is ${this.question.name}'s real name?`;
+        const response = prompt(question);
+        this.check(response);
+    },
+    check(response){
+        const answer = this.question.realName;
+        if(response === answer) {
+            alert('Correct!');
+            this.score++;
+        } else {
+            alert(`Wrong! The correct answer is ${answer}`);
+        }
+    },
+    gameOver() {
+        alert(`Game Over, you scored ${this.score} point${this.score !== 1 ? 's': ''}`);
     }
 }
-start(quiz);
+
+game.start(quiz);
