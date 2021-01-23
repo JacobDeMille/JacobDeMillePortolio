@@ -1,0 +1,43 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator This</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <h1>Simple JavaScript Calculator</h1>
+    <h2>Refresh page to start the activity</h2>
+    <button onclick="window.location.reload();">Refresh Page</button>
+    <script>
+        // calculator using "this" from the reading on object methods, "this"
+        let calculator = {
+            // ... your code ...
+            sum() {
+                let addition = this.num1 + this.num2;
+                return addition;
+            },
+            mul() {
+                let multiply = this.num1 * this.num2;
+                return multiply;
+            },
+            read() {
+                /*This is something that was throwing me off and I still am a little confused about it. 
+                Apparenlty when you put the "+" symbol in front of something like a prompt it will convert the input to 
+                a number. I was trying forever to figure out what was wrong with my code answer and it turns out that the
+                only thing I had wrong was I needed to put a + in front of the prompt.*/
+                this.num1 = +prompt('Please enter the first number');
+                this.num2 = +prompt('Please enter the second number');
+            },
+            
+        };
+
+        calculator.read();
+        alert(`The sum of the numbers is : ${calculator.sum()}`);
+        alert(`The product of the numbers is : ${calculator.mul()}`);
+    </script>
+</body>
+
+
+</html>
