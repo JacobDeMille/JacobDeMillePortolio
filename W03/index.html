@@ -91,6 +91,13 @@ hello({catchPhrase: spiderman['catchPhrase'], name: spiderman['real name']});
         </p>
         <h3>RegExp</h3>
         <p>Regular expression, or <em>RegExp</em> for short, is a patter that is used to search strings for matches to the pattern.</p>
+        <pre>
+<code>  // First mothod to great a regular expression
+const pattern = /[a-zA-Z]+ing$/;
+    // Second method to create a regular expression 
+    // using the <em>new</em> operator
+const pattern = new RegExp('[a-zA-Z]+ing');</code>
+        </pre>
 
     <script>
         const spiderman = {
