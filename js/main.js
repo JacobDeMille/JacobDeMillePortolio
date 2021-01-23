@@ -21,6 +21,10 @@ const links = [{
 {
     label: "Drum Kit Exercises from JavaScript30",
     url: "javascript-drumkit/"
+},
+{
+    label: "JavaScript Calculator using 'this'",
+    url: "W03/calculator.html"
 }];
 
 const list = document.querySelector("ol");
