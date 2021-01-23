@@ -25,12 +25,38 @@
     </main>
 
     <script>
+        
         function rollDice() {
             let die = document.getElementsByClassName('die').value;
             let output = document.getElementById("roll");
-            switch (die) {
-                case d4: 
-                
+            const dice = {
+                d4: 4,
+                d6: 6,
+                d8: 8,
+                d10: 10,
+                d12: 12,
+                d20: 20,
+                d100: 100,
+                roll() {
+                    switch(die) {
+                        case d4:
+                            return Math.floor(this.d4 * Math.random()) + 1;
+                        case d6: 
+                            return Math.floor(this.d6 * Math.random()) + 1;
+                        case d8:
+                            return Math.floor(this.d8 * Math.random()) + 1;
+                        case d10:
+                            return Math.floor(this.d10 * Math.random()) + 1;
+                        case d12: 
+                            return Math.floor(this.d12 * Math.random()) + 1;
+                        case d20:
+                            return Math.floor(this.d20 * Math.random()) + 1;
+                        case d100: 
+                            return Math.floor(this.d100 * Math.random()) + 1;
+                        default:
+                            return 0
+                    }
+                }
             }
         }
     </script>
