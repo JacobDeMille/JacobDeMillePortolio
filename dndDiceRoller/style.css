@@ -19,7 +19,7 @@ h1 {
 #dice {
     display: flex;
     flex: 1;
-    min-height: 90vh;
+    min-height: 60vh;
     align-items: center;
     justify-content: space-around;
     margin: 0 15em;
@@ -39,6 +39,12 @@ h1 {
 .die:hover {
     cursor: pointer;
     color: rgba(189, 17, 17, 0.781);
+}
+
+#roll {
+    font-size: 10em;
+    color: white;
+    margin-top: 1em;
 }
 
 span {

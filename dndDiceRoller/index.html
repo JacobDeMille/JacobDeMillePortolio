@@ -14,12 +14,12 @@
         <div id="roll"></div>
         <div id="dice">
             <button class="die" value="d4" onclick="rollDice()">d4</button>
-            <button class="die" value="d6">d6</button>
-            <button class="die" value="d8">d8</button>
-            <button class="die" value="d10">d10</button>
-            <button class="die" value="d12">d12</button>
-            <button class="die" value="d20">d20</button>
-            <button class="die" value="d100">d100</button>
+            <button class="die" value="d6" onclick="rollDice()">d6</button>
+            <button class="die" value="d8" onclick="rollDice()">d8</button>
+            <button class="die" value="d10" onclick="rollDice()">d10</button>
+            <button class="die" value="d12" onclick="rollDice()">d12</button>
+            <button class="die" value="d20" onclick="rollDice()">d20</button>
+            <button class="die" value="d100" onclick="rollDice()">d100</button>
         </div>
         <span>Photo by <a href="https://unsplash.com/@jamesponddotco?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="blank">James Pond</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="blank">Unsplash</a></span>
     </main>
@@ -30,7 +30,7 @@
             let die = document.getElementsByClassName('die').value;
             let output = document.getElementById("roll");
             const dice = {
-                sides: 0,
+                sides: 6,
                 d4: 4,
                 d6: 6,
                 d8: 8,
@@ -39,26 +39,29 @@
                 d20: 20,
                 d100: 100,
                 roll() {
-                    console.log(Math.floor(this.sides * Math.random()) + 1);
+                    roll = Math.floor(this.sides * Math.random()) + 1;
+                    console.log(roll);
+                    output.innerHTML = roll; 
                     
                 }
             }
             switch(die) {
-                case d4:
+                case "d4":
                     dice.sides = 4;
-                case d6:
+                case "d6":
                     dice.sides = 6;
-                case d8:
+                case "d8":
                     dice.sides = 8;
-                case d10:
+                case "d10":
                     dice.sides = 10;
-                case d12: 
+                case "d12": 
                     dice.side = 12;
-                case d20:
+                case "d20":
                     dice.side = 20;
-                case d100:
+                case "d100":
                     dice.side = 100;
             }
+            dice.roll();
         }
     </script>
 </body>
