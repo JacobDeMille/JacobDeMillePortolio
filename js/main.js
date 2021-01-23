@@ -24,7 +24,7 @@ const links = [{
 },
 {
     label: "Week 03 Notes",
-    url: "W02/notes.html"
+    url: "W03/"
 },
 {
     label: "JavaScript Calculator using 'this'",
