@@ -33,7 +33,8 @@ const links = [{
 {
     label: "Week 3 Team Actvity",
     url: "coding-exercises/javascript-30/array-cardio-day1"
-}];
+}
+];
 
 const list = document.querySelector("ol");
 
