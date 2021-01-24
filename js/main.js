@@ -29,6 +29,10 @@ const links = [{
 {
     label: "JavaScript Calculator using 'this'",
     url: "W03/calculator.html"
+},
+{
+    label: "Week 3 Team Actvity",
+    url: "javascript-30/array-cardio-day1"
 }];
 
 const list = document.querySelector("ol");
