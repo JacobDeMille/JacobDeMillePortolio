@@ -121,7 +121,12 @@ const pattern = new RegExp('[a-zA-Z]+ing');</code>
             Internet Explorer? Is this for companies or sites that are used a lot in other countries, like 3rd world countries, where they don't have the new computers and have to rely
             on old hardware and software? 
         </h5></h3>
-        
+        <p><b>Keyboard Events:</b> the events that happen when a key is pressed are <b>keydown, keypress, keyup</b>. The key press event only occurs for the keys that produce character
+        input whick makes this the most reliable way to find out the character that was pressed.
+        The keydown event is the action of pressing a key, whereas the keypress event is the action of a character being typed on the screen.</p>
+        <p>The third optional parameter that the addEventListener() method has is a boolean and specifies wheather or not to use capturing. 
+            The default mthod is set to false and that is why bubbling happens by default. 
+        </p>  
 
     <script>
         const spiderman = {
