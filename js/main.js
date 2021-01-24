@@ -33,6 +33,10 @@ const links = [{
 {
     label: "Week 3 Team Actvity",
     url: "coding-exercises/javascript-30/array-cardio-day1"
+},
+{
+    label: "Dice Roller App",
+    url: 'coding-exercises/dnd-dice-roller'
 }
 ];
 
