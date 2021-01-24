@@ -26,27 +26,90 @@ const inventors = [
     'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
     ];
     
-    // Array.prototype.filter()
-    // 1. Filter the list of inventors for those who were born in the 1500's
+// Array.prototype.filter()
+// 1. Filter the list of inventors for those who were born in the 1500's
 
-    // Array.prototype.map()
-    // 2. Give us an array of the inventors first and last names
+    /*    Long method
+    const results = inventors.filter(function(inventor) {
+        if(inventor.year >= 1500 && inventor.year <= 1600) {
+            return true; 
+        }
+    });*/
+    
+        
+        // Reduced method using arrow functions
+const results = inventors.filter(inventor => inventor.year >= 1500 && inventor.year <= 1600);
+console.table(results);
 
-    // Array.prototype.sort()
-    // 3. Sort the inventors by birthdate, oldest to youngest
+// Array.prototype.map()
+// 2. Give us an array of the inventors first and last names
 
-    // Array.prototype.reduce()
-    // 4. How many years did all the inventors live all together?
+const names = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
+console.table(names);
 
-    // 5. Sort the inventors by years lived
+// Array.prototype.sort()
+// 3. Sort the inventors by birthdate, oldest to youngest
 
-    // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+const birthdate = inventors.sort(function(a, b) {
+    if (a.year < b.year) {
+        return -1;
+    } else {
+        return 1;
+    }
+});
+console.table(birthdate);
+
+    /*Example from Wes Bos on how to do the sort function with just a 
+    single line and using a ternary
+    const birthdate = inventors.sort((a,b) => a.year > b.year ? 1: -1);*/
+
+// Array.prototype.reduce()
+// 4. How many years did all the inventors live all together?
+
+const reducer = inventors.reduce((total, inventor) => {
+    return total + (inventor.passed - inventor.year);
+}, 0);
+console.log(`The total years lived by all inventors combined: ${reducer}`);
+
+// 5. Sort the inventors by years lived
+
+const yearsLived = inventors.sort((a, b) => (a.passed - a.year > b.passed - b.year ? -1: 1))
+console.table(yearsLived);
 
 
-    // 7. sort Exercise
-    // Sort the people alphabetically by last name
+// 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-    // 8. Reduce Exercise
-    // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+        // const category = document.querySelector('.mw-category');
+        // const links = Array.from(category.querySelectorAll('a'));
+
+        // const de = links
+        //     .map(links => links.textContent)
+        //     .filter(streetName => streetName.includes('de'));
+
+
+// 7. sort Exercise
+// Sort the people alphabetically by last name
+
+const lastNames = people.sort((a, b) => {
+    const [aLast, aFirst] = a.split(', ');
+    const [bLast, bFirst] = b.split(', ');
+
+    return aLast > bLast ? 1: -1;
+
+});
+console.log(lastNames);
+
+// 8. Reduce Exercise
+// Sum up the instances of each of these
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'pogostick' ];
+
+const transport = data.reduce(function(total, instance) {
+    if (instance in total) {
+        total[instance]++;
+     } else {
+        total[instance] = 1;
+     }
+     return total
+}, {})
+console.log(transport);
