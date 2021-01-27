@@ -1,0 +1,95 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title {
+    text-align: justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: darkslategrey;
+    padding-left: 3rem;
+    grid-column: span 2;
+}
+
+form {
+    grid-row: 2;
+    grid-column: span 2;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.form-row {
+    padding: 0.5rem;
+    text-align: justify;
+}
+
+#apr, #term, #amount {
+    padding: .75em 1em;
+    margin: .5em 0;
+    border: 1px solid #ccc;
+    border-radius: .25em;
+    box-sizing: border-box;
+}
+
+form ul {
+    list-style: none;
+    padding: 0;
+}
+
+#clear, #calculate {
+    width: 100%;
+    background-color: #4caf4c;
+    color: white;
+    padding: .75em 1em;
+    margin: .5em 0;
+    border: none;
+    border-radius: .25em;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#clear:hover, #calculate:hover {
+    background-color: #454545;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+    padding: 5px;
+}
+
+input:valid {
+    border: 2px solid black;
+}
+
+input:focus:invalid {
+    outline: none;
+}
+
+p {
+    grid-column: span 2;
+    padding: 0.5em 2em;
+}
+
+/* This is the style of the error messages */
+.error {
+    width: 100%;
+    padding: 0;
+
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+
+    box-sizing: border-box;
+}
+
+.error.active {
+    padding: 0.3em;
+}

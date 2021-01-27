@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 class="title">Mortgage Calculator</h1>
+
+
+    <form action="">
+        <ul>
+            <li class="form-row">
+                <label for="apr">
+                    <span>APR</span>
+                    <input type="number" name="apr" id="apr" min="0" max="25.00" step=".01" placeholder="0% to 25.00%" required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
+            </li>
+            <li class="form-row">
+                <label for="term">Loan Term
+                    <input type="number" name="term" id="term" min="0" max="40" placeholder="0 to 40 years" required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
+
+            </li>
+            <li class="form-row">
+                <label for="amount">Loan Amount
+                    <input type="number" name="amount" id="amount" required>
+                    <span class="error" aria-live="polite"></span>
+                </label>
+
+            </li>
+            <li class="form-row">
+                <label for="payment">
+                    <span>Monthly Payment</span>
+                    <output id="payment"></output>
+                </label>
+
+            </li>
+            <li class="form-row">
+                <input type="button" id="calculate" value="Calculate Monthly Payment">
+
+                <input type="reset" id="clear" value="Reset Form">
+                
+            </li>
+            <li></li>
+        </ul>
+    </form>        
+    <p>This is a form calculator that I built in Fall 2020 for CS213 that I am really proud of. The form will calculate the Monthly payments for a Mortgage given the three simple inputs. The form also has user validation built in with the JavaScript so the form cannot be submitted until all three fieldsets are filled in. If any feilds are not filled in a custom error message is put under the field and focus is set to that field.</p>
+
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

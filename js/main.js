@@ -37,8 +37,11 @@ const links = [{
 {
     label: "Dice Roller App",
     url: 'coding-exercises/dnd-dice-roller'
+},
+{
+    label: "Mortgage Calculator Form",
+    url: "coding-exercises/forms/index.html"
 }
-
 ];
 
 const list = document.querySelector("ol");

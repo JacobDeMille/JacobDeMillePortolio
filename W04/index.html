@@ -10,12 +10,20 @@
 <body>
     <h1>Week 4 Reading Notes</h1>
     <h2>Chapter 8: Forms</h2>
-    <h4></h4>
-    
+    <h4>A simple serch box and button using a form</h4>
+    <form name='search' action='/search'>
+        <input name='searchInput'>
+        <button type='submit'>Search</button>
+    </form>
+    <p>There are many different events that come along with forms, one is the focus event and the blur event. Focus will be activated when the user focuses on the element. The blur event is the exact opposite, when the user moves away from the focus area the blur event is activiated.</p>
+    <h3>Submitting a form</h3>
+    <p>The submit button is used to submit forms. By using events you can do things like prevent the submission of a form before. This is helpful for validation purposes, you can prevent the form from submitting and then run some functions to check if all of the form fields have been filled out or not. Once everything has been properly filled out, you can then allow the form to be submitted.</p>
+    <h3>New Attributes in HTML5</h3>
+    <p>In HTML there were new attributes introduced for the <em>input</em> element. <br> Autofocus, gives focus to this element when a page loads. <br>
+        Placeholder, will insert the value provided in the input field until the user enters some text <br>
+        Maxlength, will limit the number of characters that can be entered in the field.</p>
 
-    <script>
-    
-    </script>
+    <script src='main.js'></script>
 </body>
 
 </html>
