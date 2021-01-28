@@ -15,7 +15,7 @@ body {
     grid-column: span 2;
 }
 
-form {
+div {
     grid-row: 2;
     grid-column: span 2;
     border: 2px solid black;
@@ -36,7 +36,7 @@ form {
     box-sizing: border-box;
 }
 
-form ul {
+div ul {
     list-style: none;
     padding: 0;
 }
