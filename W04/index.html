@@ -22,6 +22,20 @@
     <p>In HTML there were new attributes introduced for the <em>input</em> element. <br> Autofocus, gives focus to this element when a page loads. <br>
         Placeholder, will insert the value provided in the input field until the user enters some text <br>
         Maxlength, will limit the number of characters that can be entered in the field.</p>
+        <h2>Chapter 12: OOP</h2>
+        <p>In order to practice Object Oriented Progaming using JavaScript, in a little more practical way, I decided to work more on my Dice Roller application. I dicided that I wanted to find a way to make it work using the same kind consept that Wes Bos used in his drumkit application from JavaScript30. It took me some time but I have now re-worked the JavaScript for the Dice Roller to use keydown functions and use OOP. In the application I set up a class function similar that in our reading, <pre>
+<code>// Class declaration for Dice object
+class Dice {
+    constructor(sides) {
+    this.sides = sides;
+    }
+    roll() {
+        const diceRoll = Math.floor(this.sides * Math.random() + 1);
+        console.log(diceRoll);
+        return diceRoll;
+    }
+}</code>
+        </pre> Using this I was then able to create 7 objects for the different dice. <code>ex: const dice_four = new Dice(4);</code> Then adding an EventListener to the window for when a key is pressed down, I then call a function called rollDice that gets the value of the buttons in the HTML, and checked to see which key/button was pressed. It then run through a <code>swtich</code> block and then calls the object that is </p>
 
     <script src='main.js'></script>
 </body>

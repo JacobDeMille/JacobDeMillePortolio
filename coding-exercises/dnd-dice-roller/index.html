@@ -13,13 +13,13 @@
         <h1>D&D Dice Roller</h1>
         <div id="roll"></div>
         <div id="dice">
-            <button class="die" value="d4">d4 <br> A</button>
-            <button class="die" value="d6">d6 <br> S</button>
-            <button class="die" value="d8">d8 <br> D</button>
-            <button class="die" value="d10">d10 <br> F</button>
-            <button class="die" value="d12">d12 <br> G</button>
-            <button class="die" value="d20">d20 <br> H</button>
-            <button class="die" value="d100">d100 <br> J</button>
+            <button class="die" data-key="65" value="4">d4 <br> A</button>
+            <button class="die" data-key="83" value="6">d6 <br> S</button>
+            <button class="die" data-key="68" value="8">d8 <br> D</button>
+            <button class="die" data-key="70" value="10">d10 <br> F</button>
+            <button class="die" data-key="71" value="12">d12 <br> G</button>
+            <button class="die" data-key="72" value="20">d20 <br> H</button>
+            <button class="die" data-key="74" value="100">d100 <br> J</button>
             <!-- Idea: Use the same kind of event listeners that are used in the JavaScript drumkit to activiate the code and 
             roll the dice in. -->
         </div>
@@ -27,45 +27,110 @@
     </main>
 
     <script>
-        
-        function rollDice() {
-            let die = document.getElementsByClassName('die').value;
-            let output = document.getElementById("roll");
-            const dice = {
-                sides: 6,
-                d4: 4,
-                d6: 6,
-                d8: 8,
-                d10: 10,
-                d12: 12,
-                d20: 20,
-                d100: 100,
-                roll() {
-                    roll = Math.floor(this.sides * Math.random()) + 1;
-                    console.log(roll);
-                    output.innerHTML = roll; 
-                    
-                }
+
+        // Constructor function example for creating Dice object
+        /*const Dice = function(sides=6) {
+            this.sides = sides;
+            this.roll = function() {
+                return Math.floor(this.sides * Math.random() + 1);
             }
-            switch(die) {
-                case "d4":
-                    dice.sides = 4;
-                case "d6":
-                    dice.sides = 6;
-                case "d8":
-                    dice.sides = 8;
-                case "d10":
-                    dice.sides = 10;
-                case "d12": 
-                    dice.side = 12;
-                case "d20":
-                    dice.side = 20;
-                case "d100":
-                    dice.side = 100;
+        }*/
+
+        // Class declaration for Dice object
+        class Dice {
+            constructor(sides) {
+            this.sides = sides;
             }
-            dice.roll();
+            roll() {
+                const diceRoll = Math.floor(this.sides * Math.random() + 1);
+                console.log(diceRoll);
+                return diceRoll;
+            }
         }
-        document.querySelectorAll(".die").addEventListener('click',rollDice);
+        
+        // Creating new objects for each dice to be used when 
+        // a dice is clicked on
+        const dice_four = new Dice(4);
+        const dice_six = new Dice(6);
+        const dice_eight = new Dice(8);
+        const dice_ten = new Dice(10);
+        const dice_twelve = new Dice(12);
+        const dice_twenty = new Dice(20);
+        const dice_hundred = new Dice(100);
+
+        const output = document.getElementById("roll");
+        const diceButtons = document.getElementById("dice");
+        diceButtons.addEventListener("click", (event) => {
+            const isButton = event.target.nodeName === "BUTTON";
+            if (!isButton) {
+                return;
+            }else {
+                rollDice();
+            }
+            console.log(event.target.id);
+        })
+
+
+        // for (let i = 0; i < die.length; i++) {
+        //     die[i].addEventListener("click", rollDice);
+        //     console.log(die[i])
+        // }
+
+        function rollDice(e) {
+            let die = document.querySelector(`.die[data-key="${e.keyCode}"]`).value;
+            console.log(die);
+            let output = document.getElementById("roll");
+            switch(die) {
+                case "4":
+                    const four = dice_four.roll();
+                    console.log(four);
+                    output.innerHTML = four;
+                    break;
+                case "6":
+                    const six = dice_six.roll();
+                    output.innerHTML = six;
+                    break;
+                case "8":
+                    const eight = dice_eight.roll();
+                    output.innerHTML = eight;
+                    break;
+                case "10":
+                    const ten = dice_ten.roll();
+                    output.innerHTML = ten;
+                    break;
+                case "12": 
+                    const twelve = dice_twelve.roll();
+                    output.innerHTML = twelve;
+                    break;
+                case "20":
+                    const twenty = dice_twenty.roll();
+                    output.innerHTML = twenty;
+                    break;
+                case "100":
+                    const hundred = dice_hundred.roll();
+                    output.innerHTML = hundred;
+                    break;
+            }
+            // const dice = {
+            //     sides: 6,
+            //     d4: 4,
+            //     d6: 6,
+            //     d8: 8,
+            //     d10: 10,
+            //     d12: 12,
+            //     d20: 20,
+            //     d100: 100,
+            //     roll() {
+            //         roll = Math.floor(this.sides * Math.random()) + 1;
+            //         console.log(roll);
+            //         output.innerHTML = roll; 
+                    
+            //     }
+            // }
+        }
+        window.addEventListener('keydown', rollDice);
+        // const dice = document.querySelectorAll(".die")
+        // dice.addEventListener('click',rollDice);
     </script>
 </body>
 
