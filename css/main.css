@@ -29,6 +29,9 @@ li a {
   text-decoration: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+li a:hover {
+  color: #1cb356;
+}
 
 .dropbtn {
   background-color: #22bb5d;
