@@ -41,8 +41,11 @@ const links = [{
 {
     label: "Mortgage Calculator Form",
     url: "coding-exercises/forms/index.html"
+},
+{
+    label: "Week 04 Notes",
+    url: "W04/"
 }
-
 ];
 
 const list = document.querySelector("ol");
