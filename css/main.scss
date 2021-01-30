@@ -5,9 +5,9 @@ body {
 }
 
 h1,
-h2 {
+h2, {
   text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0.5em 1em 0.5em 1em;
 }
 
@@ -22,12 +22,13 @@ ol {
 
 li {
   display: grid;
-  padding: 0.5em 0;
+  padding: .5em 0;
   align-items: center;
-}
-li a {
-  text-decoration: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  a {
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
 }
 
 .dropbtn {
@@ -37,16 +38,18 @@ li a {
   font-size: 1em;
   border: none;
   cursor: pointer;
-}
-.dropbtn:hover,
-.dropbtn :focus {
-  background-color: #1cb356;
+
+  &:hover,
+  :focus {
+    background-color: #1cb356;
+  }
 }
 
 .dropdown {
   position: relative;
   display: flex;
   justify-content: center;
+  
 }
 
 .dropdown-content {
@@ -57,15 +60,17 @@ li a {
   overflow: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-}
-.dropdown-content .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-.dropdown-content .dropdown a:hover {
-  background-color: #ddd;
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown a:hover {
+    background-color: #ddd;
+  }
 }
 
 .show {
@@ -84,5 +89,3 @@ li + li {
     border-top: 1px solid slateblue;
   }
 */
-
-/*# sourceMappingURL=main.css.map */

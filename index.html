@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <title>Jacob DeMille | WDD 330 Portfoloio</title>
-    <link rel="stylesheet" href="css/main.css" />
+
+<head>
+  <meta charset="utf-8">
+  <title>Jacob DeMille | WDD 330 Portfoloio</title>
+  <link rel="stylesheet" href="css/main.css" />
+
+</head>
+
+<body>
+  <main>
+    <h1>Hi! My name is Jacob DeMille, <br> I am a Web Design and Development student <br> with a focus on the Front End.
+    </h1>
+    <!-- To improve on the portfolio and how it all looks, trying to add buttons with dropdown menus full of the links to assignments and coding done. This link is a helpful how to on making these dropdown menus. https://www.w3schools.com/howto/howto_js_dropdown.asp -->
+    <h2>WDD 330 Portfolio</h2>
     
-  </head>
-  <body>
-    <main>
-      <h1>Hi! My name is Jacob DeMille, <br> I am a Web Design and Development student <br> with a focus on the Front End.</h1>
-      <!-- To improve on the portfolio and how it all looks, trying to add buttons with dropdown menus full of the links to assignments and coding done. This link is a helpful how to on making these dropdown menus. https://www.w3schools.com/howto/howto_js_dropdown.asp -->
-      <h2>WDD 330 Portfolio</h2>
-      <h3>Menu Links</h3>
-      <ol id="list"></ol>
-    </main>
-    <footer>
-      &copy;2021 | Jacob DeMille | Utah | <a href="https://www.byui.edu/online" target="_blank">BYU-Idaho Online Learning</a>
-    </footer>
-    <script src="js/main.js"></script>
-  </body>
-  
-</html> 
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Weekly Notes
+        <div id="myDropdown" class="dropdown-content">
+          <ol id="notes" class="notes"></ol>
+        </div>
+      </button>
+    </div>
+    
+    <ol id="code" class="code"><h3>Menu Links</h3></ol>
+
+  </main>
+  <footer>
+    &copy;2021 | Jacob DeMille | Utah | <a href="https://www.byui.edu/online" target="_blank">BYU-Idaho Online
+      Learning</a>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

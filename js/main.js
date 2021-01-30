@@ -1,56 +1,60 @@
-const links = [{
-    label: "Week 01 Notes",
-    url: "W01/"
-},
-{
-    label: "Quiz Ninja Project",
-    url: "coding-exercises/quizninja/"
-}, 
-{
-    label: "Local Storage Exercise",
-    url: "coding-exercises/local-storage/"
-},
-{
-    label: "Week 02 Notes",
-    url: "W02/"
-}, 
-{
-    label: "Week 2 Team Activity",
-    url: "W02/w02-team-activity.html"
-},
-{
-    label: "Drum Kit Exercises from JavaScript30",
-    url: "coding-exercises/javascript-30/javascript-drumkit/"
-},
-{
-    label: "Week 03 Notes",
-    url: "W03/"
-},
-{
-    label: "JavaScript Calculator using 'this'",
-    url: "W03/calculator.html"
-},
-{
-    label: "Week 3 Team Actvity",
-    url: "coding-exercises/javascript-30/array-cardio-day1"
-},
-{
-    label: "Dice Roller App",
-    url: 'coding-exercises/dnd-dice-roller'
-},
-{
-    label: "Mortgage Calculator Form",
-    url: "coding-exercises/forms/index.html"
-},
-{
-    label: "Week 04 Notes",
-    url: "W04/"
-}
+const notes = [{
+        label: "Week 01 Notes",
+        url: "W01/"
+    },
+    {
+        label: "Week 02 Notes",
+        url: "W02/"
+    },
+    {
+        label: "Week 03 Notes",
+        url: "W03/"
+    },
+    {
+        label: "Week 04 Notes",
+        url: "W04/"
+    }
 ];
 
-const list = document.querySelector("ol");
+const exercise = [{
+        label: "Week 2 Team Activity",
+        url: "W02/w02-team-activity.html"
+    },
+    {
+        label: "Week 3 Team Actvity",
+        url: "coding-exercises/javascript-30/array-cardio-day1"
+    },
+    {
+        label: "Quiz Ninja Project",
+        url: "coding-exercises/quizninja/"
+    },
+    {
+        label: "Local Storage Exercise",
+        url: "coding-exercises/local-storage/"
+    },
+    {
+        label: "Drum Kit Exercises from JavaScript30",
+        url: "coding-exercises/javascript-30/javascript-drumkit/"
+    },
 
-for (const item of links) {
+    {
+        label: "JavaScript Calculator using 'this'",
+        url: "W03/calculator.html"
+    },
+    {
+        label: "Dice Roller App",
+        url: 'coding-exercises/dnd-dice-roller'
+    },
+    {
+        label: "Mortgage Calculator Form",
+        url: "coding-exercises/forms/index.html"
+    },
+];
+
+const note = document.getElementById("notes");
+
+
+for (const item of notes) {
     // Create list element
     const li = document.createElement('li');
     // Create list item
@@ -62,7 +66,43 @@ for (const item of links) {
     li.appendChild(a);
 
     // Add item to the ol list
-    list.appendChild(li);
+    note.appendChild(li);
+}
+
+const code = document.getElementById("code");
+
+for (const item of exercise) {
+    // Create list element
+    const li = document.createElement('li');
+    // Create list item
+    const a = document.createElement('a');
+    // Set the Contents
+    a.setAttribute('href', item.url);
+    a.textContent = item.label;
+    // Add to the list
+    li.appendChild(a);
+
+    // Add item to the ol list
+    code.appendChild(li);
+}
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        let dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
 }
 
 // I like the way this function works but I am going to be working on this and making work better
