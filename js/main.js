@@ -53,6 +53,7 @@ const exercise = [{
         label: "Mortgage Calculator Form",
         url: "coding-exercises/forms/index.html"
     },
+    
 ];
 
 const note = document.getElementById("notes");
