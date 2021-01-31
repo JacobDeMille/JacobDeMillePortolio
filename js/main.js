@@ -25,6 +25,10 @@ const exercise = [{
         url: "coding-exercises/javascript-30/array-cardio-day1"
     },
     {
+        label: "Week 4 Team Activity",
+        url: "W04/w04-team.html"
+    },
+    {
         label: "Quiz Ninja Project",
         url: "coding-exercises/quizninja/"
     },
