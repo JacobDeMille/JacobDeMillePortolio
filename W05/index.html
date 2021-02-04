@@ -3,13 +3,42 @@
 
 <head>
   <title>Week 5 Reading Notes</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Same stylesheet is used for all notes pages for consistancy -->
   <link rel="stylesheet" href="../css/notes-style.css" />
+  <!-- Browser keeps throwing an error about favicon being missing, This is a solution that I found on stack overflow to remove that error -->
   <link rel="shortcut icon" href="#">
 </head>
 
 <body>
-  <script>
+  <h1>Week 5 Reading Notes</h1>
+  <h2>Chapter 10: Testing and Debugging</h2>
+  <p>Error Objects: Error objects are created by either the host environment when exceptions occur, or by the code using
+    a constructor frunction. This allows programmers to create their own errors that can be thrown to the user when an
+    excpetion occurs. This is especially helpful when doing tests on your code. </p>
+  <h5>Example of creating exception error</h5>
+  <pre><code>const error = new Error('Oops, something went wrong');</code></pre>
+  <p>See DevTools for examples and output</p>
+  <h5>Example of throwing the error to the user</h5>
+  <pre><code>function squareRoot(number) {
+    'use strict';
+    if (number < 0) {
+        throw new RangeError('You can't find the square root of negative numbers')
+    }
+    return Math.sqrt(number);
+};</code></pre>
+  <p>Tests: Testing is a huge part of programming and something that I tend to forget about until I am having errors in
+    my programms. One thing I like, and am trying to pick up the habit of, from the tutorials by Wes Bos is that
+    whenever he is writting JavaScript code he is always logging to the console to make sure things are working right.
+    In the last few projects I have done for this class I have tried doing that and it has helped save me a ton of time.
+  </p>
+  <p>Testing Frameworks: Writing your own tests can be a very long and hard process, and to help with that there are
+    lots of testing frameworks that help to write meaningful test and run them. The framework touched on in the reading
+    is <em>Jest.</em></p>
+
+
+  <script src="squareRoot.test.js">
     class MultiplicatorUnitFailure extends Error {}
 
     function primitiveMultiply(a, b) {
@@ -26,6 +55,10 @@
 
     console.log(reliableMultiply(8, 8));
     // → 64
+
+    // Example of error constuction
+    const error = new Error('Oops, something went wrong');
+    // Example of throwing an error 
   </script>
 
 
