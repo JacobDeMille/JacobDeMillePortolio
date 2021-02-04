@@ -14,12 +14,13 @@
 <body>
   <h1>Week 5 Reading Notes</h1>
   <h2>Chapter 10: Testing and Debugging</h2>
-  <p>Error Objects: Error objects are created by either the host environment when exceptions occur, or by the code using
+  <p><b>Error Objects:</b> Error objects are created by either the host environment when exceptions occur, or by the
+    code using
     a constructor frunction. This allows programmers to create their own errors that can be thrown to the user when an
     excpetion occurs. This is especially helpful when doing tests on your code. </p>
   <h5>Example of creating exception error</h5>
-  <pre><code>const error = new Error('Oops, something went wrong');</code></pre>
-  <p>See DevTools for examples and output</p>
+  <pre><code>const error = new Error('Oops, something went wrong');</code><sub>See DevTools for examples and output</sub></pre>
+
   <h5>Example of throwing the error to the user</h5>
   <pre><code>function squareRoot(number) {
     'use strict';
@@ -28,17 +29,39 @@
     }
     return Math.sqrt(number);
 };</code></pre>
-  <p>Tests: Testing is a huge part of programming and something that I tend to forget about until I am having errors in
+  <p><b>Tests:</b> Testing is a huge part of programming and something that I tend to forget about until I am having
+    errors in
     my programms. One thing I like, and am trying to pick up the habit of, from the tutorials by Wes Bos is that
     whenever he is writting JavaScript code he is always logging to the console to make sure things are working right.
     In the last few projects I have done for this class I have tried doing that and it has helped save me a ton of time.
   </p>
-  <p>Testing Frameworks: Writing your own tests can be a very long and hard process, and to help with that there are
+  <p><b>Testing Frameworks:</b> Writing your own tests can be a very long and hard process, and to help with that there
+    are
     lots of testing frameworks that help to write meaningful test and run them. The framework touched on in the reading
-    is <em>Jest.</em></p>
+    is <em>Jest.</em><sub>File <b>exampleTests.test.js</b> in W05 dir will produce a passed test with Jest.</sub></p>
 
 
-  <script src="squareRoot.test.js">
+  <pre><code><h4>All the code in exampleTests.test.js for Jest testing</h4>
+function squareRoot(number) {
+  'use strict';
+  if (number < 0) {
+      throw new RangeError("You can't find the square root of negative numbers")
+  }
+  return Math.sqrt(number);
+};
+test('square root of 4 is 2', () => {
+expect(squareRoot(4)).toBe(2);
+});
+
+// Function factorsOf() takes a number as a parameter and return all the factors
+test('factors of 12', () => {
+  expect(factorsOf(12)).toEqual([1,2,3,4,6,12]);
+});
+// This test syas that the factorsOf() function should 
+// be an array containing the factors of 12
+// This test will fail completley because there is no factorsOf() function</code></pre>
+  <script>
+    // Retry error practice code
     class MultiplicatorUnitFailure extends Error {}
 
     function primitiveMultiply(a, b) {
@@ -59,28 +82,49 @@
     // Example of error constuction
     const error = new Error('Oops, something went wrong');
     // Example of throwing an error 
+    throw new Error(error);
 
-    function squareRoot(number) {
-    "use strict";
-    if (number < 0) {throw new RangeError("You can't find the square root of negative numbers")}
-    return Math.sqrt(number);
-};
+    // The locked box error practice code
+    const box = {
+      locked: true,
+      unlock() {
+        this.locked = false;
+      },
+      lock() {
+        this.locked = true;
+      },
+      _content: [],
+      get content() {
+        if (this.locked) throw new Error("Locked!");
+        return this._content;
+      }
+    };
 
-    function imaginarySquareRoot(number) {
-      'use strict';
-      let answer;
+    function withBoxUnlocked(body) {
+      // Your code here.
+      console.log(`Is the box locked? ${box.locked}`);
+      box.unlock();
+      console.log(`Is the box locked? ${box.locked}`);
       try {
-        answer = String(squareRoot(number));
-      } catch (error) {
-        answer = squareRoot(-number) + "i";
+        return body;
       } finally {
-        return `+ or - ${answer}`;
+        box.lock();
       }
     }
 
-    function itSquareRoots4() {
-      return squareRoot(4) === 2;
+    withBoxUnlocked(function () {
+      box.content.push("gold piece");
+    });
+
+    try {
+      withBoxUnlocked(function () {
+        throw new Error("Pirates on the horizon! Abort!");
+      });
+    } catch (e) {
+      console.log("Error raised: " + e);
     }
+    console.log(`Is the box locked? ${box.locked}`);
+    // → true
   </script>
 
 
