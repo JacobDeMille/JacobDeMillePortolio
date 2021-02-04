@@ -13,6 +13,10 @@ const notes = [{
     {
         label: "Week 04 Notes",
         url: "W04/"
+    },
+    {
+        label: "Week 5 Notes",
+        url: "W05/"
     }
 ];
 
@@ -52,8 +56,7 @@ const exercise = [{
     {
         label: "Mortgage Calculator Form",
         url: "coding-exercises/forms/index.html"
-    },
-    
+    },    
 ];
 
 const note = document.getElementById("notes");
