@@ -46,7 +46,7 @@ li {
 
   .details {
     grid-column: 2 / 4;
-
+    margin-left: .5rem;
   }
 
   p {
@@ -65,7 +65,7 @@ li {
   .full {
     display: block;
 
-    .details {
+    div.details {
       padding-left: 1.5rem;
     }
   }
