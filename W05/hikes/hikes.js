@@ -70,11 +70,12 @@ export default class Hikes {
   }
   buildBackButton() {
     const backButton = document.createElement("button");
-    backButton.innerHTML - '&lt; - All Hikes';
+    backButton.innerHTML = '&lt;- All Hikes';
     backButton.addEventListener('touchend', () => {
       this.showHikeList();
     });
     backButton.classList.add('hidden');
+    backButton.classList.add('btn')
     this.parentElement.before(backButton);
     return backButton;
   }
@@ -88,7 +89,8 @@ function renderHikeList(parent, hikes) {
 
 function renderOneHikeLight(hike) {
   const item = document.createElement("li");
-
+  item.classList.add('light');
+  item.setAttribute('data-name', hike.name);
   item.innerHTML = ` <h2>${hike.name}</h2>
         <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
         <div  class="details">
@@ -108,6 +110,8 @@ function renderOneHikeLight(hike) {
 
 function renderOneHikeFull(hike) {
   const item = document.createElement("li");
+  item.classList.remove('light');
+  item.classList.add('full');
 
   item.innerHTML = ` <h2>${hike.name}</h2>
         <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
