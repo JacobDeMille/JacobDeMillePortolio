@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,EAAE,CAAC;EACD,MAAM,EAAE,eAAe;CAExB;;AAED,AAAA,EAAE,CAAC;EACD,MAAM,EAAE,GAAG;EACX,KAAK,EAAE,GAAG;EACV,OAAO,EAAE,CAAC;EACV,gBAAgB,EAAE,KAAK;EACvB,MAAM,EAAE,eAAe;EACvB,UAAU,EAAE,MAAM;CACnB;;AAED,AAAA,OAAO,CAAC;EACN,SAAS,EAAE,GAAG;CACf",
+    "sources": [
+        "w04-team.scss"
+    ],
+    "names": [],
+    "file": "w04-team.css"
+}

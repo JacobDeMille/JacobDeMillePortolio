@@ -1,0 +1,17 @@
+tr {
+  border: 1px solid black;
+}
+
+td {
+  height: 8em;
+  width: 8em;
+  padding: 0;
+  background-color: white;
+  border: 3px solid black;
+  text-align: center;
+}
+
+caption {
+  font-size: 2em;
+}
+/*# sourceMappingURL=w04-team.css.map */

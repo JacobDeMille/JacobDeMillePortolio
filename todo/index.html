@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List Challenge</title>
-   <link rel="stylesheet" href="#" />
+    <link rel="stylesheet" href="sass/styles.css " />
 </head>
+
 <body>
     <main>
-        <!-- Structure for the a todo element -->
-        <div id="todo-elelment">
-            <input type="checkbox" name="mark-complete" id="mark-complete">
-            <label for="mark-complete" id="task-text"></label>
-            <button id="remove-task">Remove</button>
-        </div>
-
         <!-- List for todo elements to be added to with JavaScript -->
-        <ul id="tasks" class="tasks">
-            <h3>Todos</h3>
-        </ul>
+        <section class="listContainer">
+            <div class="listTitle">
+                <h1>Todos</h1>
+            </div>
+            <hr>
+            <div id="listTasks" class="listTasks">
+                <!-- Structure for the a todo element 
+                will be removed later with JavaScript.
+            Items will be created dynamically with JavaScript-->
+                <div class="task">
+                    <input type="checkbox" name="mark-complete" id="1">
+                    <label for="1" id="task-text">Example Task</label>
+                    <button id="remove-task" class="btn">X</button>
+                </div>
+                <div class="task">
+                    <input type="checkbox" name="mark-complete" id="2">
+                    <label for="2" id="task-text">Example Task</label>
+                    <button id="remove-task" class="btn">X</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer">
+            <div class="displayTasks">
+                <p class="tasksTodo">This will be replaced with JavaScript later</p>
+                <div>
+                    <!-- Buttons to switch between tasks left to do.
+                    Right now I have the idea of using radio buttons to accomplish this so that you can switch between them.
+                    This may not end up being the best solution to the problem but right now this is what I am going with. -->
+                    <input type="radio" name="tasks" id="all" class="radio">
+                    <input type="radio" name="tasks" id="active" class="radio">
+                    <input type="radio" name="tasks" id="completed" class="radio">
+                </div>
+            </div>
+        </section>
 
         <!-- Form for adding a new task to the todo list -->
-        <div id="add-task-form">
-            <label for="new-task" class="new-task">Add a New Task</label>
-            <input type="text" name="new-task" id="new-task">
-            <button id="add-task">Add Task</button>
-        </div>
+        <section class="todoForm">
+            <form id="add-task-form">
+                <label for="new-task" class="new-task">Add a New Task</label>
+                <input type="text" name="new-task" id="new-task" placeholder="Add a New Task">
+                <button id="add-task" class="button" title="Add new item" aria-label="Add new task to todo list">Add
+                    Task</button>
+            </form>
+        </section>
+
+
     </main>
     <script src="main.js" type="module"></script>
 </body>
+
 </html>

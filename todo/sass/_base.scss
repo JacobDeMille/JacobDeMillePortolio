@@ -1,0 +1,51 @@
+// Import font choice
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+// Set variables for colors
+$default-font-color: #000;
+$background-color: #734B5E;
+$container-background: #BCBDC0;
+$container-boarder: #F5D3C8;
+
+// Media Querie mix in to use and only have to define once
+@mixin MQ($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  color: $default-font-color;
+  width: 100%;
+  min-height: 100%;
+  @include MQ(768px) {
+    font-size: 22px;
+  }
+}
+
+body {
+  background-color: $background-color;
+}
+
+h1 {
+  text-align: center;
+}
+
+section {
+  background-color: $container-background;
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  border: 8rem $container-boarder;
+  border-radius: 6px;
+  padding: 1rem
+}
+
