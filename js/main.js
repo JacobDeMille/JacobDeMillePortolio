@@ -60,7 +60,8 @@ const exercise = [{
     {
         label: "Week 5 Team Activity",
         url: "W05/hikes/"
-    }   
+    },
+    
 ];
 
 const note = document.getElementById("notes");
