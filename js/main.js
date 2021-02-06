@@ -56,7 +56,11 @@ const exercise = [{
     {
         label: "Mortgage Calculator Form",
         url: "coding-exercises/forms/index.html"
-    },    
+    },
+    {
+        label: "Week 5 Team Activity",
+        url: "w05/hikes/"
+    }   
 ];
 
 const note = document.getElementById("notes");
