@@ -67,4 +67,8 @@ span a {
 span a a:hover {
   color: blue;
 }
+
+.favicon {
+  fill: red;
+}
 /*# sourceMappingURL=style.css.map */
