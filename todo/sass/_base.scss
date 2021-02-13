@@ -6,6 +6,11 @@ $default-font-color: #000;
 $background-color: #734B5E;
 $container-background: #BCBDC0;
 $container-boarder: #F5D3C8;
+$textbox-bordercolor: lightgray;
+$btn-textcolor: #fff;
+$btn-hovercolor: #000;
+$add-btn-color: #4caf;
+$clear-btn-color: #9f6;
 
 // Media Querie mix in to use and only have to define once
 @mixin MQ($size) {
@@ -32,7 +37,7 @@ html, body {
 }
 
 body {
-  background-color: $background-color;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%);
 }
 
 h1 {

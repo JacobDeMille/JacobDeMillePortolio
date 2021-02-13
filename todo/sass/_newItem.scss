@@ -1,0 +1,37 @@
+.todoForm {
+  top: 0;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  
+    form {
+      display: flex;
+      justify-content: space-between;
+      
+      label {
+        display: none;
+      }
+
+      input[type="text"] {
+        width: 80%;
+        font-size: 1rem;
+        border: 2px solid $textbox-bordercolor;
+        border-radius: 5px;
+        padding: 0.75rem;
+        outline: none;
+      }
+
+      input[type="text"]:focus,
+      input[type="text"]:hover {
+        box-shadow: 1px .25px 1.5px #000;
+      }
+
+      button {
+        font-size: 1.25rem;
+        background: linear-gradient(0deg, #{$add-btn-color} 0%, #{$clear-btn-color} 100%);
+        padding: 0.25rem;
+        @include MQ(768px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+}
