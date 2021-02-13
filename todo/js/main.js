@@ -1,5 +1,5 @@
-import ToDoList from "./ToDos";
-import ToDoItem from "./ToDoItem";
+import ToDoList from "./ToDos.js";
+import ToDoItem from "./ToDoItem.js";
 
 // All of the code for the todo list application goes here
 
@@ -16,7 +16,7 @@ document.addEventListener("readystatechange", (event) => {
   }
 });
 
-const innitApp = () => {
+const initApp = () => {
   // Add Listeners
 
   // Procedural 
