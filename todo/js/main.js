@@ -1,5 +1,5 @@
-import ToDoList from "/ToDos";
-import ToDoItem from "/ToDoItem";
+import ToDoList from "./ToDos";
+import ToDoItem from "./ToDoItem";
 
 // All of the code for the todo list application goes here
 
