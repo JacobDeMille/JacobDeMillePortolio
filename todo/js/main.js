@@ -53,6 +53,33 @@ const renderList = () => {
   })
 };
 
-// const buildListItem = (item) => {
-//   const div 
-// }
+const buildListItem = (item) => {
+  const div = document.createElement("div");
+  div.className = "task";
+  const check = document.createElement('input');
+  check.type = "checkbox";
+  check.id = item.getId();
+  const btn = document.createElement("button");
+  btn.classList.add("btn", "remove-task");
+  // addClickListenerToCheckBox(check);
+  const label = document.createElement("lable");
+  label.htmlFor = item.getId();
+  label.textContent = item.getItem();
+  div.appendChild(check);
+  div.appendChild(label);
+  div.appendChild(btn);
+  const container = document.getElementById("listItems");
+  container.appendChild(div);
+}
+
+
+/* <div class="task">
+    <input type="checkbox" name="mark-complete" id="1">
+    <label for="1" id="task-text">Example Task</label>
+    <button id="remove-task" class="btn">X</button>
+</div>
+<div class="task">
+    <input type="checkbox" name="mark-complete" id="2">
+    <label for="2" id="task-text">Example Task</label>
+    <button id="remove-task" class="btn">X</button>
+</div> */
