@@ -118,8 +118,8 @@ const buildListItem = (item) => {
 const addClickListenerToCheckBox = (checkbox) => {
   checkbox.addEventListener('click', (event) => {
     if (checkbox.checked) {
-      this.parent.classList.add("completed");
-      console.log(`You checked ${this}`)
+      completeItem();
+      console.log(`You checked ${checkbox}`)
     }
     toDoList.removeItem(checkbox.id);
     updateData(toDoList.getList());

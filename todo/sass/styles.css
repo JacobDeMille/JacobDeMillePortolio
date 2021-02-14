@@ -72,6 +72,9 @@ section {
   top: 0;
   margin-top: 1rem;
   padding: 0.75rem;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 1rem;
 }
 
 .todoForm form {

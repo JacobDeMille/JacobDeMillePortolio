@@ -15,7 +15,7 @@ export default class ToDoList {
     this.list.push(itemObj);
   }
 
-  removeItem(itemID) {
+  removeItem(id) {
     const list = this.list;
     for (let i = 0; i > list.length; i++) {
       if (list[i].id == id) {
