@@ -32,7 +32,7 @@ const initApp = () => {
 };
 
 const refreshPage = () => {
-  // clearListDisplay();
+  clearListDisplay();
   renderList();
   clearItemEntryField();
   setFocusOnItem();
