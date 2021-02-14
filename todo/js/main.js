@@ -104,27 +104,20 @@ const buildListItem = (item) => {
   svg.appendChild(use);
   btn.appendChild(svg);
 
-  
+  addClickListenerToCheckBox(check);
   const label = document.createElement("label");
   label.htmlFor = item.getId();
   label.textContent = item.getItem();
-  label.classList.add("some");
   div.appendChild(check);
   div.appendChild(label);
   div.appendChild(btn);
   const container = document.getElementById("listItems");
   container.appendChild(div);
-  addClickListenerToCheckBox(check, label);
 };
 
-const addClickListenerToCheckBox = (checkbox, label) => {
+const addClickListenerToCheckBox = (checkbox) => {
   checkbox.addEventListener('click', (event) => {
-    // if (checkbox.checked) {
-    //   // completeItem();
-    //   console.log(`You checked ${label.textContent}`)
-    //   // label.classList.add("completed");
-    // }
-    toDoList.removeItemFromList(checkbox.id);
+    toDoList.removeItem(checkbox.id);
     updateData(toDoList.getList());
     
     setTimeout(() => {
