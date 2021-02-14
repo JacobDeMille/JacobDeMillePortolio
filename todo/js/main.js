@@ -117,16 +117,12 @@ const buildListItem = (item) => {
 
 const addClickListenerToCheckBox = (checkbox) => {
   checkbox.addEventListener('click', (event) => {
-    if (checkbox.checked) {
-      completeItem();
-      console.log(`You checked ${checkbox}`)
-    }
     toDoList.removeItem(checkbox.id);
     updateData(toDoList.getList());
-    refreshPage();
-    // setTimeOut(() => {
-      // 
-    // }, 1000);
+    
+    setTimeOut(() => {
+      refreshPage();
+    }, 1000);
   })
 };
 
