@@ -2,6 +2,17 @@
   min-height: 60vh;
   padding: .5rem;
   margin-top: 1rem;
+  
+  .listTitle {
+    display: flex;
+    justify-content: space-between;
+    button {
+      background: $background-color;
+      svg {
+        fill: white;
+      }
+    }
+  }
 
   hr {
     width: 100%;
@@ -27,7 +38,7 @@
       text-decoration: underline;
     }
     label {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
     }
     button {
       background: transparent;
