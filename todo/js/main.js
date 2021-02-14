@@ -76,12 +76,11 @@ const buildListItem = (item) => {
   svg.setAttribute("viewBox", "0 0 70 70")
   
   // Create path for SVG
-  let svgPath = document.createElementNS("http://www.w3.org/2000/svg", 'path');
   let use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
   use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#icon-cross');
   
   // Append path to SVG and SVG to button
-  svg.appendChild(svgPath);
+  svg.appendChild(use);
   btn.appendChild(svg);
 
   addClickListenerToCheckBox(check);
