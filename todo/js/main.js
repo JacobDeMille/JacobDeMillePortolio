@@ -32,7 +32,7 @@ const initApp = () => {
 };
 
 const refreshPage = () => {
-  clearListDisplay();
+  // clearListDisplay();
   renderList();
   clearItemEntryField();
   setFocusOnItem();
@@ -68,14 +68,18 @@ const buildListItem = (item) => {
   btn.classList.add("btn", "remove-task");
 
   // Create element for SVG that acts as the remove button
-  var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute('width', '45');
-  svg.setAttribute('height', '45');
-  svg.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
+  let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.classList.add("icon", "icon-cross");
+  svg.setAttribute('width', '30');
+  svg.setAttribute('height', '30');
+  svg.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");
+  svg.setAttribute("viewBox", "0 0 70 70")
+  
   // Create path for SVG
-  var svgPath = document.createElementNS("http://www.w3.org/2000/svg", 'path');
-  svgPath.setAttribute('d', "M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z");
+  let svgPath = document.createElementNS("http://www.w3.org/2000/svg", 'path');
+  let use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+  use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#icon-cross');
+  
   // Append path to SVG and SVG to button
   svg.appendChild(svgPath);
   btn.appendChild(svg);
