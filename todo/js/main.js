@@ -69,7 +69,6 @@ const buildListItem = (item) => {
 
   // Create element for SVG that acts as the remove button
   var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute('style', 'border: 1px solid black');
   svg.setAttribute('width', '45');
   svg.setAttribute('height', '45');
   svg.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xlink", "http://www.w3.org/1999/xlink");

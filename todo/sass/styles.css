@@ -60,8 +60,7 @@ section {
   fill: white;
 }
 
-.icon:hover,
-.icon :focus {
+.icon:hover, .icon :focus {
   fill: green;
 }
 
