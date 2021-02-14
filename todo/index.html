@@ -10,6 +10,25 @@
 </head>
 
 <body>
+    <!-- Mark up for SVG elements to use for buttons
+        Markup for the SVG's came from icomoon.io -->
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <!-- Mark up for plus icon -->
+            <symbol id="icon-plus" viewBox="0 0 32 32">
+                <path
+                    d="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z">
+                </path>
+            </symbol>
+            <!-- Mark up for cross icon -->
+            <symbol id="icon-cross" viewBox="0 0 32 32">
+                <path
+                    d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z">
+                </path>
+            </symbol>
+        </defs>
+    </svg>
     <main>
         <!-- List for todo elements to be added to with JavaScript -->
         <section class="listContainer">
@@ -24,12 +43,20 @@
                 <div class="task">
                     <input type="checkbox" name="mark-complete" id="1">
                     <label for="1" id="task-text">Example Task</label>
-                    <button class="btn">X</button>
+                    <button class="btn">
+                        <svg class="icon icon-cross" width="30" height="30" viewBox="0 0 70 70">
+                            <use xlink:href="#icon-cross"></use>
+                        </svg>
+                    </button>
                 </div>
                 <div class="task">
                     <input type="checkbox" name="mark-complete" id="2">
                     <label for="2" id="task-text">Example Task</label>
-                    <button class="btn">X</button>
+                    <button class="btn">
+                        <svg class="icon icon-cross" width="30" height="30" viewBox="0 0 70 70">
+                            <use xlink:href="#icon-cross"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
@@ -53,8 +80,11 @@
             <form id="add-task-form">
                 <label for="new-task" class="new-task">Add a New Task</label>
                 <input type="text" name="new-task" id="new-task" placeholder="Add a New Task">
-                <button id="add-task" class="btn" title="Add new item" aria-label="Add new task to todo list">Add
-                    Task</button>
+                <button id="add-task" class="btn" title="Add new item" aria-label="Add new task to todo list">
+                    <svg class="icon icon-plus" width="30" height="30">
+                        <use xlink:href="#icon-plus"></use>
+                    </svg>
+                </button>
             </form>
         </section>
 

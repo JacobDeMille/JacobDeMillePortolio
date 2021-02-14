@@ -1,16 +1,24 @@
 .btn {
   width: 15%;
+  height: auto;
   min-width: 48px;
   min-height: 48px;
   color: $btn-textcolor;
-  border: 2px solid $textbox-bordercolor;
+  border: none;
   border-radius: 5px;
   outline: none;
+
   &:hover {
     cursor: pointer;
   }
-  &:hover,:focus {
-    filter: brightness(120%);
-    box-shadow: 1px .25px 1.5px #000;
+
+}
+
+.icon {
+  fill: white;
+
+  &:hover,
+  :focus {
+    fill: green;
   }
 }
