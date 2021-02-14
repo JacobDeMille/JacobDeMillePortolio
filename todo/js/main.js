@@ -120,7 +120,7 @@ const addClickListenerToCheckBox = (checkbox) => {
     toDoList.removeItem(checkbox.id);
     updateData(toDoList.getList());
     
-    setTimeOut(() => {
+    setTimeout(() => {
       refreshPage();
     }, 1000);
   })
