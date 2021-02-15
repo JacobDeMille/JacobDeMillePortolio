@@ -87,6 +87,7 @@ const buildListItem = (item) => {
   check.id = item.getId();
   const btn = document.createElement("button");
   btn.classList.add("btn", "remove-task");
+  // Get button ID
   btn.id = item.getId();
 
   // Create element for SVG that acts as the remove button
