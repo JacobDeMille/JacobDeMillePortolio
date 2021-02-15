@@ -169,3 +169,4 @@ const createNewItem = (itemID, itemText) => {
   toDo.setItem(itemText);
   return toDo;
 }
+
