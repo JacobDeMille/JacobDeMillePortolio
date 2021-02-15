@@ -87,6 +87,7 @@ const buildListItem = (item) => {
   check.id = item.getId();
   const btn = document.createElement("button");
   btn.classList.add("btn", "remove-task");
+  btn.id = btn.getId();
 
   // Create element for SVG that acts as the remove button
   let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -104,7 +105,6 @@ const buildListItem = (item) => {
   svg.appendChild(use);
   btn.appendChild(svg);
 
-  addClickListenerToCheckBox(check);
   const label = document.createElement("label");
   label.htmlFor = item.getId();
   label.textContent = item.getItem();
@@ -112,12 +112,13 @@ const buildListItem = (item) => {
   div.appendChild(label);
   div.appendChild(btn);
   const container = document.getElementById("listItems");
+  addClickListenerToCheckBox(btn);
   container.appendChild(div);
 };
 
-const addClickListenerToCheckBox = (checkbox) => {
-  checkbox.addEventListener('click', (event) => {
-    toDoList.removeItem(checkbox.id);
+const addClickListenerToCheckBox = (btnX) => {
+  btnX.addEventListener('click', (event) => {
+    toDoList.removeItem(btnX.id);
     updateData(toDoList.getList());
     
     setTimeout(() => {
