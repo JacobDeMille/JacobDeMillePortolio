@@ -1,5 +1,5 @@
 export default class Comments {
-  constructor() {
+  constructor(type) {
     this._comment = [{key:"key", value:"value"}];
     this._hike = String;
     this._date = new Date();
