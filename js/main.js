@@ -19,6 +19,10 @@ const notes = [{
         url: "W05/"
     },
     {
+        label: "Week 06 Notes",
+        url: "W06/"
+    },
+    {
         label: "Week 07 Notes",
         url: "W07/"
     }
