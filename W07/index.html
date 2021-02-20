@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/notes-style.css">
+  <style>
+    code {
+      background-color: lightgray;
+    }
+  </style>
+  <title>Week 07 Notes</title>
+</head>
+
+<body>
+  <h1>Week 07 Notes</h1>
+  <h2>Further Functions</h2>
+  <p>The <code>call()</code> method of a function can be used to set the value of <code><em>this</em></code> inside a
+    function. </p>
+
+  <p>Example:
+    <pre><code>function sayHello(){
+  return `Hello, my name is ${this.name}`;
+}</code></pre>
+  </p>
+
+  <p>We can then use the following to call the function <code>sayHello()</code> and set the value of <code><em>this</em></code>
+  <pre><code>const clark = {name: 'Clark'};
+    sayHello.call(clark);
+
+This then returns 'Hello, my name is Clark'</code></pre></p>
+
+  <p>You can call a function immediatly after invoking it by adding parentheses at the end of the definition. This is known as an IIFE.
+<pre><code>(function(){
+  const temp = 'World';
+  console.log(`Hello ${temp}`);
+  })();</code></pre>
+  </p>
+
+</body>
+
+</html>
