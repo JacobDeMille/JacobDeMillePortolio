@@ -26,19 +26,57 @@
 }</code></pre>
   </p>
 
-  <p>We can then use the following to call the function <code>sayHello()</code> and set the value of <code><em>this</em></code>
-  <pre><code>const clark = {name: 'Clark'};
+  <p>We can then use the following to call the function <code>sayHello()</code> and set the value of
+    <code><em>this</em></code>
+    <pre><code>const clark = {name: 'Clark'};
     sayHello.call(clark);
 
-This then returns 'Hello, my name is Clark'</code></pre></p>
+This then returns 'Hello, my name is Clark'</code></pre>
+  </p>
 
-  <p>You can call a function immediatly after invoking it by adding parentheses at the end of the definition. This is known as an IIFE.
-<pre><code>(function(){
+  <p>You can call a function immediatly after invoking it by adding parentheses at the end of the definition. This is
+    known as an IIFE.
+    <pre><code>(function(){
   const temp = 'World';
   console.log(`Hello ${temp}`);
   })();</code></pre>
   </p>
   <p>A <em><b>promise</b></em> represents the future result of an asynchronous operation.</p>
+  <h4>Pure Functions</h4>
+  <p>There are 3 fundimental rules to functional programming and using pure functions.
+    <ol>
+      <li>The return value should only depend on the values provided as arguments. It should not rely on values from
+        elsewhere in the program.</li>
+      <li>No side-effects from the function, it should not affect or change anything elsewhree in the program. </li>
+      <li>Transparency, if you give the argument it should always return the same result. </li>
+    </ol>
+    They should always have at least one argument and a return value, otherwise they brak the first and second rule of
+    Pure Functions.
+  </p>
+  <h2>AJAX</h2>
+  <p>The new method for using AJAX is not XMLHttpRequests like we have done in previous classes, now there is the
+    <code>fetch()</code> API method which helps solve many of the issues
+    expereinced with XMLHttpRequests and helps to streamline many of the concepts.</p>
+  <p>To create an HTTP request using the fetch() method you will need to use a constuctor function. Here is an example:
+    <pre><code>const request = new Request('https://example.com/data', {
+  method:'GET',
+  mode: 'cors',
+  redirect: 'follow',
+  cache: 'no-cache'
+}); </code></pre> Once the request object is assigned to a variable (in this case <em><b>request</b></em>) it can be
+    used as the parameter of the <code>fetch()</code> method</p>
+  <p>Another method to approch this is to jsut include the URL and opbect directly as the argumnets of
+    <code>fectch()</code>
+    Example:
+    <pre><code>fetch('https://example.com/data', {
+  method:'GET',
+  mode: 'cors',
+  redirect: 'follow',
+  cache: 'no-cache'
+});
+.then(// Do something with the response)
+.catch(// Handle any errors from the request)</code></pre>
+  </p>
 
 </body>
 
