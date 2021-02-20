@@ -75,8 +75,27 @@ This then returns 'Hello, my name is Clark'</code></pre>
   cache: 'no-cache'
 });
 .then(// Do something with the response)
-.catch(// Handle any errors from the request)</code></pre>
+.catch(// Handle any errors from the request)</code></pre></p>
+  <p>One thing that stands out to me about this new method of using the Fetch API instead of the XMLHttpRequests is that it seems a lot easier to manage and 
+    keep track of everything. I like that almost all of the examples they give in the reading show how to do this using constructors and storing those 
+    in variables. That makes it so much easier to read and understand.
   </p>
+  <p>Headers are used to specify additional information about the request and response. The headers object has several built in methods that we can use: <code>has(), get(), set(), append(), delete(), and 3 loop methods[keys(), values() and entries()]</code></p>
+  <p><h5>Example of a typical set up for a request using Headers, Requests and Response objects:</h5> <pre><code>const url = 'https:example.com/data';
+  const headers = new Headers({ 'Content-Type': 'text/plain', 
+  'Accept-Charset' : 'utf-8', 'Accept-Encoding':'gzip,deflate' })
+  const request = (url,{
+      headers: headers
+  })
+  fetch(request)
+  .then( function(response) {
+      if(response.ok) {
+          return response;
+      }
+      throw Error(response.statusText);
+  })
+  .then( response => // do something with response )
+  .catch( error => console.log('There was an error!') )</code></pre></p>
 
 </body>
 
