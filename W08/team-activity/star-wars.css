@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  color: #000;
+  width: 100%;
+  min-height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  html, body {
+    font-size: 22px;
+  }
+}
+
+body {
+  background: -webkit-gradient(linear, left top, right top, from(#020024), to(#00d4ff));
+  background: linear-gradient(90deg, #020024 0%, #00d4ff 100%);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  padding: .5rem;
+  color: white;
+}
+
+section {
+  background-color: #d9dce6;
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  border: 8rem #F5D3C8;
+  border-radius: 6px;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+section .btn {
+  padding: .5em;
+  font-size: medium;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+}
+
+section #prev {
+  justify-self: flex-start;
+}
+
+section #next {
+  justify-self: flex-end;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+/*# sourceMappingURL=star-wars.css.map */
