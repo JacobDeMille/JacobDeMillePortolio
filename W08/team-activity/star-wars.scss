@@ -55,6 +55,10 @@ section {
   border: 8rem $container-boarder;
   border-radius: 6px;
   padding: 1rem;
+  
+}
+
+#buttons {
   display: grid;
   grid-template-columns: auto auto;
   .btn {

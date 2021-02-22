@@ -1,20 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta discription="An app using the Star Wars API">
   <link rel="stylesheet" href="star-wars.css">
   <title>W08 Team Activity</title>
 </head>
+
 <body>
   <h1>W08 Team Activity</h1>
   <section>
-  <button class="btn" id="prev">Previous</button>
-  <button class="btn" id="next">Next</button>
+    <div id="output"></div>
+
+    <div class="listbox">
+      <table id="shiplist">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Length</th>
+            <th>Crew</th>
+          </tr>
+        </thead>
+
+        <tbody></tbody>
+      </table>
+
+    </div>
+
+    <div id="buttons">
+      <button class="btn" id="prev">Previous</button>
+      <button class="btn" id="next">Next</button>
+    </div>
   </section>
   
 
-  <script src="star-wars.js"></script>
+
+  <script src="star-wars-person.js"></script>
 </body>
+
 </html>

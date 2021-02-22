@@ -40,13 +40,16 @@ section {
   border: 8rem #F5D3C8;
   border-radius: 6px;
   padding: 1rem;
+}
+
+#buttons {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto;
       grid-template-columns: auto auto;
 }
 
-section .btn {
+#buttons .btn {
   padding: .5em;
   font-size: medium;
   font-weight: 700;
@@ -54,11 +57,11 @@ section .btn {
   border-radius: 5px;
 }
 
-section #prev {
+#buttons #prev {
   justify-self: flex-start;
 }
 
-section #next {
+#buttons #next {
   justify-self: flex-end;
 }
 
