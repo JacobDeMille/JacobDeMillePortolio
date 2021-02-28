@@ -5,11 +5,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/notes-style.css">
+  <style>
+    .hover {
+      text-align: center;
+      width: 100px;
+      height: 25px;
+      background: lightblue;
+      transition-property: width, height, transform, font, color;
+      transition-duration: 2s;
+      transition-timing-function: ease-in-out;
+    }
+    .hover:hover {
+      width: 300px;
+      height: 100px;
+      font-size: 60px;
+      background: rgb(255, 89, 89);
+      transform: rotate(360deg);
+    }
+  </style>
   <title>Week 8 Notes</title>
 </head>
 <body>
   <h1>Week 8 Notes</h1>
-  <p>The transform property lets you lets you translate, rotate, scale, and/or skew any element on the page.</p>
+  <h2>CSS3 Transforms and Transitions</h2>
+  <p>The <code>transform</code> property lets you lets you translate, rotate, scale, and/or skew any element on the page.
+  <b>You should not declare a new <code>transform</code> element.</b> This is because of the Cascade in CSS, with that a seconed transform will override the first one. 
+  If you want to have more than one transform you should you should provide a space-seperated list of <code>transform</code> functions</p>
+  <p><b>Translation</b> functions allow you to move elements left, right, up, or down. These functions are similar to the behavior of <code>position: relative</code>. Transitions usually appear smoother because they require less cliet side processing then doing the same thing with JavaScript</p>
+  <h4>Transition & Transform Example</h4>
+  <div class="hover">Hover over</div>
+  <h5>All CSS used for the hover div</h5>
+  <pre><code>transition-property: width, height, transform, color;
+transition-duration: 2s;
+transition-timing-function: ease-in-out;</code></pre>
+  <p>The <b><code>scale(x,y)</code></b> function scales an element by the defined factors horizontally then vertically.</p>
+  <p>The <b><code>rotate()</code></b> function rotates an element around the point of origin by a specified angle value.</p>
 
 </body>
 </html>
