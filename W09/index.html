@@ -1,15 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Week 07 Notes</title>
   <link rel="stylesheet" href="../css/notes-style.css">
+  <style>
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
   <h1>Week 09 Notes</h1>
   <h2>The Window Object</h2>
-  <p>The Browswer Object Model (BOM) is siilar to the Documnet Object Model (DOM). This is where all global variables are defined and can be used throughout the whole program. To declare global variables you do not use any of the keywords "const, let or var".</p>
+  <p>The Browswer Object Model (BOM) is siilar to the Documnet Object Model (DOM). This is where all global variables
+    are defined and can be used throughout the whole program. To declare global variables you do not use any of the
+    keywords "const, let or var".</p>
+    <p>This is an example of a popup window (using Modal) that can be found on <a href="https://www.w3schools.com/howto/howto_css_modals.asp" target="_blank" rel="noopener noreferrer">W3schools.com</a></p>
+  <!-- Trigger/Open The Modal -->
+  <button id="myBtn">Open Modal</button>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+  </div>
+  <h3>The Document Object</h3>
+  <p>The write() method simply writes a string of text to the page. If a page has already loaded, it will completely replace the current document. The use of document.write() is heavily frowned upon as it can only be realistically used by mixing JavaScript within an HTML document. There are still some extremely rare legitimate uses of it, but a ninja programmer will hardly ever need to use it.</p>
+  <h4>Cookies</h4>
+  <p>Cookies are small files that are saved locally on a user’s computer. They were invented by Netscape as a way of getting round HTTP being a stateless protocol. This means that a browser does not remember anything from one request to another.The use of cookies for tracking purposes has been much maligned in recent years. Their use for data storage is starting to be replaced in many cases by the new HTML5 localStorage API as it allows more data to be stored. </p>
+
+  <h2>HTML5 APIs</h2>
+  <p>HTML5 is the latest version of the Hypertext Markup Language used to create web pages. HTML5 added a lot of new features to the specitication.</p>
+  <p>The specification for HTML5 contains quite a few APIs that help gain access to hardware like cameras, batteries, geolocation, etc. </p>
+  <p>One API that seems like it would be very useful when developing for mobile devices is Geolocation. This could help a developer a lot when building certain applications.</p>
+  
+
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
+
 </html>
