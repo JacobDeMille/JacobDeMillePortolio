@@ -81,7 +81,11 @@ const exercise = [{
     {
         label: "ToDo List Application",
         url: "todo/"
-    }
+    },
+    {
+        label: "Advanced CSS Style Guide Template",
+        url: "coding-exercises/advanced-css/"
+    },
     
 ];
 
