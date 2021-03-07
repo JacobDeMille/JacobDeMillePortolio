@@ -1,0 +1,206 @@
+header {
+  background-color: $color-2;
+}
+
+.cd-logo {
+  /* logo box style */
+  background-color: $color-1;
+  width: 120px;
+
+  @include MQ(M) {
+    width: 180px;
+  }
+}
+
+.cd-main-nav {
+  /* main navigation background color - full screen on small devices */
+  background: $color-2;
+
+  li a {
+    color: $color-5;
+    border-color: lighten($color-2, 5%);
+  }
+
+  @include MQ(M) {
+    li a {
+      color: lighten($color-2, 40%);
+
+      &.selected {
+        color: $color-5;
+        box-shadow: 0 2px 0 $color-1;
+      }
+
+      &:hover {
+        color: $color-5;
+      }
+    }
+  }
+}
+
+.cd-nav-trigger span {
+  /* hamburger menu */
+  background-color: $color-5;
+
+  &::before,
+  &::after {
+    /* upper and lower lines */
+    background-color: $color-5;
+  }
+}
+
+.nav-is-visible .cd-nav-trigger span {
+  /* hide line in the center on mobile when nav is visible */
+  background-color: rgba($color-5, 0);
+
+  &::before,
+  &::after {
+    /* preserve visibility of upper and lower lines - close icon */
+    background-color: rgba($color-5, 1);
+  }
+}
+
+.cd-download {
+  /* download button top-right visible on big devices */
+  background-color: lighten($color-2, 10%);
+
+  .no-touch &:hover {
+    background-color: lighten($color-2, 15%);
+  }
+
+  span {
+    /* tooltip */
+    background: $color-1;
+    color: $color-5;
+
+    &::before {
+      /* right arrow color */
+      border-color: $color-1;
+    }
+  }
+}
+
+// Navigation
+
+.cd-navigation {
+  .cd-box {
+    background-color: $color-1;
+  }
+}
+
+.cd-primary-nav {
+  
+    margin: 0 auto;
+    
+  
+
+  list-style: none;
+  padding: 0;
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      color: white;
+      background-color: $color-3;
+    }
+
+  }
+
+  @include MQ(M) {
+    display: flex;
+    background-color: rgba($color-5, 0);
+
+    li {
+      display: block;
+      /* change state in small view */
+      flex: 1 1 auto;
+
+      &:first-child {
+        display: none;
+      }
+
+      a {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.cd-secondary-nav {
+  nav {
+    margin: 0 auto;
+    background-color: #6db9d5;
+  }
+
+  list-style: none;
+  padding: 0;
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      color: white;
+      background-color: $color-3;
+    }
+
+  }
+
+  @include MQ(M) {
+    display: flex;
+    background-color: rgba($color-5, 0);
+
+    li {
+      display: block;
+      /* change state in small view */
+      flex: 1 1 auto;
+
+      &:first-child {
+        display: none;
+      }
+
+      a {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.responsive li {
+  display: block;
+}
+
+.responsive2 li {
+  display: block;
+}
