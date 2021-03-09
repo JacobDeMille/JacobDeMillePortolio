@@ -33,8 +33,7 @@ const notes = [{
     {
         label: "Week 09 Notes",
         url: "W09/"
-    }
-    
+    },    
 ];
 
 const exercise = [{
@@ -81,7 +80,11 @@ const exercise = [{
     {
         label: "ToDo List Application",
         url: "todo/"
-    }
+    },
+    {
+        label: "Advanced CSS Style Guide Template",
+        url: "coding-exercises/advanced-css/"
+    },
     
 ];
 
