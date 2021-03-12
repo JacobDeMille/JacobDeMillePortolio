@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Form</title>
+  <link rel="stylesheet" href="form-validation.css">
+</head>
+
+<body>
+  <h1 class="title">Shopping Form</h1>
+
+
+
+  <ul>
+    <li class="form-row">
+      <label for="first_name">
+        <span>First Name</span>
+        <input type="text" name="first_name" id="first_name" placeholder="John" required>
+        <span class="error" aria-live="polite"></span>
+      </label>
+    </li>
+    <li class="form-row">
+      <label for="last_name">
+        <span>Last Name</span>
+        <input type="text" name="last_name" id="last_name" placeholder="Smith" required>
+        <span class="error" aria-live="polite"></span>
+      </label>
+
+    </li>
+    <li class="form-row">
+      <label for="address">
+        <span>Address</span>
+        <textarea name="address" id="address" placeholder="123 Main Street, New York, NY 10030" required></textarea>
+        <span class="error" aria-live="polite"></span>
+      </label>
+
+    </li>
+    <li class="form-row">
+      <label for="phone">
+        <span>Phone</span>
+        <input type="text" name="phone" id="phone" placeholder="123-456-7890" required>
+        <span class="error" aria-live="polite"></span>
+      </label>
+
+    </li>
+    <li class="form-row">
+      <label for="items" id="items">
+        <span><input type="checkbox" name="item_0" id="item_0" onchange="setHair(this)" required> Hairspray -
+          $2.95</span>
+        <span><input type="checkbox" name="item_1" id="item_1" onchange="setPen(this)" required> Pen - $3.99</span>
+        <span><input type="checkbox" name="item_2" id="item_2" onchange="setTissues(this)" required> Tissues -
+          $1.56</span>
+        <span><input type="checkbox" name="item_3" id="item_3" onchange="setSoda(this)" required> Soda - $5.85</span>
+        <span class="error" aria-live="polite"></span>
+      </label>
+
+    </li>
+    <li class="form-row">
+      <label for="total">
+        <span>Total</span>
+        <input readonly type="text" name="total">
+      </label>
+
+    </li>
+    <li class="form-row">
+      <label for="card" id="card_type">
+        <span>Visa <input type="radio" name="card" id="card" required></span>
+        <span>Mastercard <input type="radio" name="card" id="card" required></span>
+        <span>American Express <input type="radio" name="card" id="card" required></span>
+        <span class="error" aria-live="polite"></span>
+      </label>
+
+    </li>
+    <li class="form-row">
+      <label for="credit_card">
+        <span>Credit Card Number</span>
+        <input type="text" name="credit_card" id="credit_card" placeholder="1111 1111 1111 1111" required>
+        <span class="error" aria-live="polite"></span>
+      </label>
+
+    </li>
+    <li class="form-row">
+      <label for="exp_date">
+        <span>Experation Date</span>
+        <input type="text" name="exp_date" id="exp_date" placeholder="01/2020" required>
+        <span class="error" aria-live="polite"></span>
+      </label>
+
+    </li>
+    <li class="form-row">
+      <label for="payment">
+        <span>Monthly Payment</span>
+        <output id="payment"></output>
+      </label>
+
+    </li>
+    <li class="form-row">
+      <input type="reset" id="clear" value="Reset Form">
+      <br>
+      <input type="button" name="validate" id="validate" value="Submit">
+    </li>
+    <li></li>
+  </ul>
+
+
+  <script src="form-validation.js"></script>
+
+</body>
+
+</html>
