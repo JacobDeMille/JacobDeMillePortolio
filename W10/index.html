@@ -7,13 +7,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/notes-style.css">
   <title>Week 10 Notes</title>
+  <style>
+    #first_name {
+    padding: .75em 1em;
+    margin: .5em 0;
+    border: 1px solid #ccc;
+    border-radius: .25em;
+    box-sizing: border-box;
+}
+    form ul {
+      display: grid;
+      list-style: none;
+      padding: 0;
+    }
+
+    #validate {
+      background-color: #4caf4c;
+      color: white;
+      padding: .75em 1em;
+      margin: .5em 0;
+      border: none;
+      border-radius: .25em;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    label {
+      flex-direction: column;
+      font-size: 1.5em;
+      padding: 5px;
+    }
+
+    input:valid {
+      border: 2px solid black;
+    }
+
+    input:focus:invalid {
+      outline: none;
+    }
+
+    /* This is the style of our error messages */
+    .error {
+      width: 100%;
+      padding: 0;
+
+      font-size: 80%;
+      color: white;
+      background-color: #900;
+      border-radius: 0 0 5px 5px;
+
+      box-sizing: border-box;
+    }
+
+    .error.active {
+      padding: 0.3em;
+    }
+  </style>
 </head>
 
 <body>
   <h1>Week 10 Notes</h1>
   <h2>Form Validation</h2>
-  
+  <p>When you have a page that is submitting data to a server you need to make sure that all of the required fields are
+    completely filled out and done so properaly. If the data is sent without this step it will be harder for the
+    program, or imposible, to complete. Having validation on the server side is good but having it on the cliet side is
+    important so you are not always sending back to the user that the info they entered is not correct. Doing so before
+    it is even sent helps a lot in the long run.</p>
+  <form>
+    <ul>
+      <li class="form-row">
+        <label for="first_name">
+          <span>First Name</span>
+          <input type="text" name="first_name" id="first_name" placeholder="John" required>
+          <span class="error" aria-live="polite"></span>
+        </label>
+        <input type="button" name="validate" id="validate" value="Submit">
+      </li>
+    </ul>
+  </form>
 
+  <p>This is a simple example of cliet side form validation that I did last year. The one I did last year has 9 input fields and the JavaScript is a lot longer but this is just on input and a button from the form I built. If nothing is entered in the first name box when a user clicks on the submit button it fills in the span element with an error message. The error message is made using JavaScript and CSS. Once the user enters a name the program will check it again and if it is filled in it will move on to the next input field and check that it has also been filled in.</p>
+  <p>For another look at this see the Morgatge Calculator on my Portfolio, which uses the same cleint side form validation. </p>
+
+  <script>
+    // Add event listener to the validate button
+    document.getElementById("validate").addEventListener("click", validateFirstName);
+    function validateFirstName() {
+      let first = document.getElementById('first_name').value;
+      let firstError = document.querySelector("#first_name + span.error");
+
+      // if first_name is empty we return a message and set focus
+      if (first == '') {
+        firstError.textContent = "Missing Value, please enter your first name";
+        first.className = 'error active';
+        document.getElementById("first_name").focus();
+        return false;
+        //reset innerHTML and reset class name
+      } else {
+        firstError.innerHTML = '';
+        firstError.className = 'error';
+        
+      }
+    }
+  </script>
 </body>
 
 </html>
