@@ -34,6 +34,10 @@ const notes = [{
         label: "Week 09 Notes",
         url: "W09/"
     },    
+    {
+        label: "Week 10 Notes",
+        url: "W10/"
+    },    
 ];
 
 const exercise = [{
