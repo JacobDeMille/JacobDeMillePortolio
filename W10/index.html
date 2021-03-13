@@ -123,6 +123,20 @@
 
       }
     }
+
+    fetch("https://movie-database-imdb-alternative.p.rapidapi.com/?i=tt4154796&r=json", {
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-key": "7ea71eb7f0mshed24eb4e99084f1p179759jsnbc125c6ca17c",
+          "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com"
+        }
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.error(err);
+      });
   </script>
 </body>
 
