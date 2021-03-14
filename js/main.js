@@ -89,6 +89,10 @@ const exercise = [{
         label: "Advanced CSS Style Guide Template",
         url: "coding-exercises/advanced-css/"
     },
+    {
+        label: "Quakes Near Me",
+        url: "W10/quakes/earth-quake.html"
+    },
     
 ];
 
