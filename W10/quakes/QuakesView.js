@@ -3,15 +3,29 @@
    renderQuakeList(quakeList, listElement) {
      //build a list of the quakes...include the title and time of each quake then append the list to listElement. You should also add the id of the quake record as a data- property to the li. ie. <li data-id="">
      quakeList.features.forEach(element => {
-       const item = document.createElement('li');
+       const tbody = document.getElementById('tbody');
+       const tr = document.createElement('tr');
+       
+
+       const location = document.createElement('td');
+       location.innerHTML = `${element.properties.place}`
+       const mag = document.createElement('td');
+       mag.innerHTML = `${element.properties.mag}`;
+       const date = document.createElement('td');
+       date.innerHTML = `${new Date(element.properties.time)}`;
+
+       tr.appendChild(location);
+       tr.appendChild(mag);
+       tr.appendChild(date);
+       tbody.appendChild(tr);
+
        console.log(element);
-       item.setAttribute('data-id', element.id);
-       item.innerHTML = `${element.properties.title}<p>${new Date(element.properties.time)}</p>`;
-       listElement.appendChild(item);
+       
+
      });
 
      listElement.innerHTML = quakeList.features.map(quake => {
-         return `<td data-id=${quake.id}>${quake.properties.title}</td>, <td>${new Date(quake.properties.time)}</td>`;
+         return `<li data-id=${quake.id}>${quake.properties.title}</li>, <div>${new Date(quake.properties.time)}</div></li>`;
        })
        .join('');
    }
