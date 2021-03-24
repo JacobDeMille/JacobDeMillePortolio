@@ -9,9 +9,9 @@ export default class Movie {
     this._details = [];
   }
 
-  async getMovieByGenre(genre) {
-    // const newURL = this.baseUrl 
-  }
+  // async getMovieByGenre(genre) {
+  //   // const newURL = this.baseUrl 
+  // }
 
   async getMovieDetails(movieID) {
     const details = `https://api.themoviedb.org/3/movie/${movieID}?api_key=651dd06cfce5f626304367d5d45cb689`

@@ -1,4 +1,6 @@
 import { getJSON } from "./utilities.js";
+import Movie from "./Movie.js";
+import MovieController from "./MovieController.js";
 
 const movieURL = "https://api.themoviedb.org/3/movie/550?api_key=651dd06cfce5f626304367d5d45cb689"
 console.log(movieURL)
@@ -14,3 +16,9 @@ console.log(genreResponse.genres)
 let poster = document.createElement("IMG");
 poster.setAttribute("src", jsonResponse.backdrop_path)
 document.body.appendChild(poster);
+
+let newMovie = new Movie(550);
+console.log(newMovie)
+
+const myMovieController = new MovieController("#movieList");
+myMovieController.init();
