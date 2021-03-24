@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A date night generator. If you want a movie or TV show to watch but don't know what to watch, let this generator pick one for you!">
+  <meta name="description"
+    content="A date night generator. If you want a movie or TV show to watch but don't know what to watch, let this generator pick one for you!">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" type="module"></script>
   <title>Movie Date Night</title>
 </head>
+
 <body>
-  <h1>Movie Date Night Generator</h1>
-  <h2>Pick a Genre</h2>
+  <h1 class="title">Movie Date Night Generator</h1>
+
   <form action="">
-    <select name="genre" id="genre">
+    <label for="genre">Pick a Genre</label>
+    <select name="genre" id="genre" class="form-row">
       <option value="Action Genre">Action Genre</option>
       <option value="Animation Genre">Animation Genre</option>
       <option value="Comedy Genre">Comedy Genre</option>
@@ -29,4 +35,5 @@
     <button type="submit" class="btn" id="btn">Submit</button>
   </form>
 </body>
+
 </html>
