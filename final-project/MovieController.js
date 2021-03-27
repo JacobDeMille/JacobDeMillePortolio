@@ -38,13 +38,14 @@ export default class MovieController {
   async getMovieByGenre() {
     this.genre = document.getElementById("genre").value;
     this.rating = document.getElementById("rating").value;
-    const newMovie = await this.movie.getMovieByGenre(this.genre, this.rating);
+    const newMovie = await this.movie.getMovieByGenre(this.genre);
     console.log(newMovie);
-    const randomNumber = Math.floor(Math.random() * 21);
+    const ratingsList = await this.movie.getMovieByRating(this.rating)
+    const randomNumber = Math.floor(Math.random() * 20);
     console.log(randomNumber)
-    console.log(newMovie.results[randomNumber]);
-    console.log(newMovie.results[randomNumber].id);
-    const newMovieID = newMovie.results[randomNumber];
+    console.log(ratingsList.results[randomNumber]);
+    console.log(ratingsList.results[randomNumber].id);
+    const newMovieID = ratingsList.results[randomNumber];
     this.movieView.renderMovieList(newMovieID)
   }
 }
