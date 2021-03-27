@@ -47,5 +47,6 @@ export default class MovieController {
     console.log(ratingsList.results[randomNumber].id);
     const newMovieID = ratingsList.results[randomNumber];
     this.movieView.renderMovieList(newMovieID)
+    
   }
 }
