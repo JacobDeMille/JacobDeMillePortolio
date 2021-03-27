@@ -18,7 +18,7 @@ body {
   grid-column: span 2;
 }
 
-form {
+.form-container {
   -ms-grid-row: 2;
   grid-row: 2;
   grid-column: span 2;
@@ -67,6 +67,10 @@ select {
 p {
   grid-column: span 2;
   padding: 0.5em 2em;
+}
+
+.detailsContainer {
+  text-align: center;
 }
 
 /* This is the style of the error messages */

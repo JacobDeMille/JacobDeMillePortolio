@@ -5,7 +5,9 @@ export default class MovieController {
   constructor(parent) {
     this.parent = parent;
     this.parentElement = null;
-    this.genre = String;
+    this.genre = 0;
+    this.rating = String;
+    this.fightClub = 550; // 550 = Fight club. Using this right now for testing.
     this.movie = new Movie();
     this.movieView = new MovieView();
   }
@@ -16,11 +18,33 @@ export default class MovieController {
     
   }
 
-  async getMovieDetails() {
-    this.genre = document.getElementById("genre").value;
+  async initGenre() {
+    this.parentElement = document.querySelector(this.parent);
+    this.getMovieByGenre();
+  }
 
-    this.parentElement.innerHTML = `<li>Loading...</li>`;
-    const movieList = await this.movie.getMovieDetails(this.genre)
-    console.log(movieList)
+  async getMovieDetails() {
+    
+
+    // this.parentElement.innerHTML = `<li>Loading...</li>`;
+    // // const movieList = await this.movie.getMovieDetails(this.genre)
+    // // console.log(movieList)
+    // const fightTime = await this.movie.getMovieDetails(this.fightClub)
+    // console.log(fightTime)
+    // console.log(fightTime.poster_path)
+    // this.movieView.renderMovieList(fightTime, this.parentElement);
+  }
+
+  async getMovieByGenre() {
+    this.genre = document.getElementById("genre").value;
+    this.rating = document.getElementById("rating").value;
+    const newMovie = await this.movie.getMovieByGenre(this.genre, this.rating);
+    console.log(newMovie);
+    const randomNumber = Math.floor(Math.random() * 21);
+    console.log(randomNumber)
+    console.log(newMovie.results[randomNumber]);
+    console.log(newMovie.results[randomNumber].id);
+    const newMovieID = newMovie.results[randomNumber];
+    this.movieView.renderMovieList(newMovieID)
   }
 }

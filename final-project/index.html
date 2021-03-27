@@ -15,27 +15,43 @@
 <body>
   <h1 class="title">Movie Date Night Generator</h1>
 
-  <form action="">
-    <label for="genre">Pick a Genre</label>
-    <select name="genre" id="genre" class="form-row">
-      <option value="Action Genre">Action Genre</option>
-      <option value="Animation Genre">Animation Genre</option>
-      <option value="Comedy Genre">Comedy Genre</option>
-      <option value="Crime Genre">Crime Genre</option>
-      <option value="Drama Genre">Drama Genre</option>
-      <option value="Experimental Genre">Experimental Genre</option>
-      <option value="Fantasy Genre">Fantasy Genre</option>
-      <option value="Historical Genre">Historical Genre</option>
-      <option value="Horror Genre">Horror Genre</option>
-      <option value="Romance Genre">Romance Genre</option>
-      <option value="Science Fiction Genre">Science Fiction Genre</option>
-      <option value="Thriller Genre">Thriller Genre</option>
-      <option value="Western Genre">Western Genre</option>
-    </select>
-    <button type="submit" class="btn" id="btn">Submit</button>
-  </form>
+  <div>
+    <div class="form-container">
+      <label for="genre">Pick a Genre</label>
+      <select name="genre" id="genre" class="form-row">
+        <option value="28">Action Genre</option>
+        <option value="12">Adventure</option>
+        <option value="16">Animation Genre</option>
+        <option value="35">Comedy Genre</option>
+        <option value="80">Crime Genre</option>
+        <option value="99">Documentary Genre</option>
+        <option value="18">Drama Genre</option>
+        <option value="10751">Family Genre</option>
+        <option value="14">Fantasy Genre</option>
+        <option value="36">Historical Genre</option>
+        <option value="27">Horror Genre</option>
+        <option value="10749">Romance Genre</option>
+        <option value="878">Science Fiction Genre</option>
+        <option value="53">Thriller Genre</option>
+        <option value="37">Western Genre</option>
+      </select>
+      <label for="rating">Choose a Rating</label>
+      <select name="rating" id="rating">
+        <option value="G">G</option>
+        <option value="PG">PG</option>
+        <option value="PG-13">PG-13</option>
+        <option value="R">R</option>
+        <option value="NC-17">NC-17</option>
+      </select>
+      <button class="btn" id="btn">Submit</button>
+    </div>
 
-  <div id="movieList"></div>
+    <div id="movieList"></div>
+    <div id="movieDetails"></div>
+
+  </div>
+
+
 </body>
 
 </html>
