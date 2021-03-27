@@ -96,7 +96,8 @@ const exercise = [{
     {
         label: "Final Project: Movie Date Night Generator",
         url: "final-project/"
-    }
+    },
+    
     
 ];
 
