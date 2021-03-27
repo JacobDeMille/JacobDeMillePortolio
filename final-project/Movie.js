@@ -15,7 +15,7 @@ export default class Movie {
   // }
 
   async getMovieDetails(movieID) {
-    const details = `https://api.themoviedb.org/3/movie/${movieID}?api_key=651dd06cfce5f626304367d5d45cb689&append_to_response=videos`
+    const details = `https://api.themoviedb.org/3/movie/${movieID}?api_key=651dd06cfce5f626304367d5d45cb689&include_video=true&append_to_response=videos`
     this._details = getJSON(details)
     console.log(this._details)
     return this._details;
@@ -23,7 +23,7 @@ export default class Movie {
   
   async getMovieByGenre(genre, rating) {
     const page = getRandomPage();
-    const movie = `https://api.themoviedb.org/3/discover/movie?api_key=651dd06cfce5f626304367d5d45cb689&with_genres=${genre}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`
+    const movie = `https://api.themoviedb.org/3/discover/movie?api_key=651dd06cfce5f626304367d5d45cb689&with_genres=${genre}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=${page}`
     this._genre = getJSON(movie)
     console.log(this._genre)
     return this._genre;
