@@ -14,13 +14,13 @@ export default class MovieController {
 
   async init() {
     this.parentElement = document.querySelector(this.parent);
-    this.getMovieDetails();
+    this.movieDetails();
     
   }
 
   async initGenre() {
     this.parentElement = document.querySelector(this.parent);
-    this.getMovieByGenre();
+    this.moviesByGenre();
   }
 
   async getMovieDetails() {
@@ -35,18 +35,45 @@ export default class MovieController {
     // this.movieView.renderMovieList(fightTime, this.parentElement);
   }
 
-  async getMovieByGenre() {
+  async moviesByGenre() {
+    
+      // Get a the genre specified by the user
     this.genre = document.getElementById("genre").value;
-    this.rating = document.getElementById("rating").value;
+    console.log(this.genre)
+      // Get a list of movies by Genre
     const newMovie = await this.movie.getMovieByGenre(this.genre);
+    console.log("This is the list for the Genre specified")
     console.log(newMovie);
+    // this.moviesByRating(newMovie)
+
+
+      // Get a rating specified by the user
+    this.rating = document.getElementById("rating").value;
+    // Get a new list of the movies that have a specific rating in the same Genre
     const ratingsList = await this.movie.getMovieByRating(this.rating)
+    console.log("This is the list for the Ratings specified in the Genre")
+    console.log(ratingsList);
+
+    
+    
+    // Get a random number to select a secific movie in the list of 20 movies returned in the list
     const randomNumber = Math.floor(Math.random() * 20);
     console.log(randomNumber)
-    console.log(ratingsList.results[randomNumber]);
-    console.log(ratingsList.results[randomNumber].id);
+    console.log(newMovie.results[randomNumber]);
+    console.log(newMovie.results[randomNumber].id);
+      // Get the ID for the Specific movie that is to be desplayed.
     const newMovieID = ratingsList.results[randomNumber];
+      // Call renderMovieList to show the information to the user. 
     this.movieView.renderMovieList(newMovieID)
     
+  }
+
+  async moviesByRating(genreList) {
+    
+
+  }
+  
+  async movieDetails() {
+
   }
 }
