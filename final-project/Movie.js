@@ -30,7 +30,7 @@ export default class Movie {
   async getMovieByRating(rating, genre, numberOfPages=1) {
     const min = 1;
     
-    const page = getRandomPage(min, numberOfPages);
+    const page = getRandomPage(numberOfPages, min);
     console.log("")
     console.log(`The page number for this query will be: ${page}`)
 
@@ -47,7 +47,7 @@ export default class Movie {
 // the returned value has hundreds of different pages, each with 20 movies results per page. 
 // This way we can make the selection of movies more random by specifying a random page and then 
 // it will specify a random movie from the list on the random page to get a specific movie.
-function getRandomPage(min=1, max=237) {
+function getRandomPage(max, min=1) {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min) + min);
