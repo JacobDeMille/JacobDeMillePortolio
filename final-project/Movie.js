@@ -18,17 +18,18 @@ export default class Movie {
   }
   
   // Get a list of movies that are in the Genre specified by the user
-  async getMovieByGenre(genre) {
-    const genreList = `https://api.themoviedb.org/3/discover/movie?api_key=651dd06cfce5f626304367d5d45cb689&with_genres=${genre}&language=en-US&include_adult=false&include_video=true`;
+  async getMovieByGenre(genre, rating) {
+    const page = getRandomPage();
+    const genreList = `https://api.themoviedb.org/3/discover/movie?api_key=651dd06cfce5f626304367d5d45cb689&with_genres=${genre}&certification_country=US&certification.lte=${rating}&certification.gte=${rating}&language=en-US&include_adult=false&include_video=true&page=${page}`;
     this._genre = getJSON(genreList);
     console.log(this._genre);
     return this._genre;
   }
 
   // Get a list of movies that are in the Ratings specified by the user
-  async getMovieByRating(rating) {
+  async getMovieByRating(rating, genre) {
     const page = getRandomPage();
-    const ratingList = `https://api.themoviedb.org/3/discover/movie?api_key=651dd06cfce5f626304367d5d45cb689&certification_country=US&certification=${rating}&language=en-US&include_adult=false&include_video=true&page=${page}`;
+    const ratingList = `https://api.themoviedb.org/3/discover/movie?api_key=651dd06cfce5f626304367d5d45cb689&with_genres=${genre}&certification_country=US&certification.lte=${rating}&certification.gte=${rating}&language=en-US&include_adult=false&include_video=true&page=${page}`;
     this._ratings = getJSON(ratingList);
     console.log(this._ratings);
     return this._ratings;

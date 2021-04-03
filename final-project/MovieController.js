@@ -41,7 +41,7 @@ export default class MovieController {
     this.genre = document.getElementById("genre").value;
     console.log(this.genre)
       // Get a list of movies by Genre
-    const newMovie = await this.movie.getMovieByGenre(this.genre);
+    const newMovie = await this.movie.getMovieByGenre(this.genre, this.rating);
     console.log("This is the list for the Genre specified")
     console.log(newMovie);
     // this.moviesByRating(newMovie)
@@ -50,7 +50,7 @@ export default class MovieController {
       // Get a rating specified by the user
     this.rating = document.getElementById("rating").value;
     // Get a new list of the movies that have a specific rating in the same Genre
-    const ratingsList = await this.movie.getMovieByRating(this.rating)
+    const ratingsList = await this.movie.getMovieByRating(this.rating, this.genre)
     console.log("This is the list for the Ratings specified in the Genre")
     console.log(ratingsList);
 
@@ -62,7 +62,7 @@ export default class MovieController {
     console.log(newMovie.results[randomNumber]);
     console.log(newMovie.results[randomNumber].id);
       // Get the ID for the Specific movie that is to be desplayed.
-    const newMovieID = ratingsList.results[randomNumber];
+    const newMovieID = newMovie.results[randomNumber];
       // Call renderMovieList to show the information to the user. 
     this.movieView.renderMovieList(newMovieID)
     
