@@ -39,11 +39,11 @@ export default class MovieController {
     
       // Get a the genre specified by the user
     this.genre = document.getElementById("genre").value;
-    console.log(this.genre)
+    // console.log(this.genre)
       // Get a list of movies by Genre
-    const newMovie = await this.movie.getMovieByGenre(this.genre, this.rating);
-    console.log("This is the list for the Genre specified")
-    console.log(newMovie);
+    // const newMovie = await this.movie.getMovieByGenre(this.genre, this.rating);
+    // console.log("This is the list for the Genre specified")
+    // console.log(newMovie);
     // this.moviesByRating(newMovie)
 
 
@@ -51,18 +51,29 @@ export default class MovieController {
     this.rating = document.getElementById("rating").value;
     // Get a new list of the movies that have a specific rating in the same Genre
     const ratingsList = await this.movie.getMovieByRating(this.rating, this.genre)
+    console.log("")
     console.log("This is the list for the Ratings specified in the Genre")
     console.log(ratingsList);
+    console.log(`The number of pages from the results: ${ratingsList.total_pages}`)
+
+    let numberOfPages = ratingsList.total_pages;
+    const ratingsListRandomPage = await this.movie.getMovieByRating(this.rating, this.genre, numberOfPages)
+    console.log("")
+    console.log("This is the NEW list for the Ratings, specifying the number of pages to give to the random page function")
+    console.log(ratingsListRandomPage)
+
 
     
     
     // Get a random number to select a secific movie in the list of 20 movies returned in the list
     const randomNumber = Math.floor(Math.random() * 20);
-    console.log(randomNumber)
-    console.log(newMovie.results[randomNumber]);
-    console.log(newMovie.results[randomNumber].id);
+    // console.log(randomNumber)
+    console.log("")
+    console.log(`The selected movie to use and dispaly to the user`)
+    console.log(ratingsListRandomPage.results[randomNumber]);
+    console.log(`Movie ID number: ${ratingsListRandomPage.results[randomNumber].id}`);
       // Get the ID for the Specific movie that is to be desplayed.
-    const newMovieID = newMovie.results[randomNumber];
+    const newMovieID = ratingsListRandomPage.results[randomNumber];
       // Call renderMovieList to show the information to the user. 
     this.movieView.renderMovieList(newMovieID)
     
@@ -76,4 +87,10 @@ export default class MovieController {
   async movieDetails() {
 
   }
+}
+
+function getRandomPage(min=1, max=237) {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min) + min);
 }

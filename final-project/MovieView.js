@@ -11,6 +11,8 @@ export default class MovieView {
     
     const title = document.createElement('h2');
     title.innerHTML = `${movieID.title}`
+    console.log("")
+    console.log("The elements that will be added to html to dispaly to the user")
     console.log(title);
     const release_date = document.createElement('h4');
     release_date.innerHTML = `Release Date: ${movieID.release_date}`;
@@ -27,7 +29,7 @@ export default class MovieView {
     movieDetails.innerHTML = "";
     movieDetails.appendChild(movieDetailsContainer);
 
-    console.log(movieID);
+    // console.log(movieID);
     
   }
   

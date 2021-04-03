@@ -27,8 +27,13 @@ export default class Movie {
   }
 
   // Get a list of movies that are in the Ratings specified by the user
-  async getMovieByRating(rating, genre) {
-    const page = getRandomPage();
+  async getMovieByRating(rating, genre, numberOfPages=1) {
+    const min = 1;
+    
+    const page = getRandomPage(min, numberOfPages);
+    console.log("")
+    console.log(`The page number for this query will be: ${page}`)
+
     const ratingList = `https://api.themoviedb.org/3/discover/movie?api_key=651dd06cfce5f626304367d5d45cb689&with_genres=${genre}&certification_country=US&certification.lte=${rating}&certification.gte=${rating}&language=en-US&include_adult=false&include_video=true&page=${page}`;
     this._ratings = getJSON(ratingList);
     console.log(this._ratings);
@@ -43,5 +48,7 @@ export default class Movie {
 // This way we can make the selection of movies more random by specifying a random page and then 
 // it will specify a random movie from the list on the random page to get a specific movie.
 function getRandomPage(min=1, max=237) {
-    return Math.random() * (max - min) + min;
-  }
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min) + min);
+}
