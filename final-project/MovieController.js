@@ -67,30 +67,18 @@ export default class MovieController {
     
     // Get a random number to select a secific movie in the list of 20 movies returned in the list
     const randomNumber = Math.floor(Math.random() * 20);
-    // console.log(randomNumber)
+    console.log(`Random number to get the random movie: ${randomNumber}`)
     console.log("")
     console.log(`The selected movie to use and dispaly to the user`)
     console.log(ratingsListRandomPage.results[randomNumber]);
     console.log(`Movie ID number: ${ratingsListRandomPage.results[randomNumber].id}`);
       // Get the ID for the Specific movie that is to be desplayed.
     const newMovieID = ratingsListRandomPage.results[randomNumber];
+    console.log(ratingsListRandomPage.results[randomNumber])
+    console.log(newMovieID)
       // Call renderMovieList to show the information to the user. 
     this.movieView.renderMovieList(newMovieID)
     
   }
 
-  async moviesByRating(genreList) {
-    
-
-  }
-  
-  async movieDetails() {
-
-  }
-}
-
-function getRandomPage(min=1, max=237) {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min) + min);
 }
