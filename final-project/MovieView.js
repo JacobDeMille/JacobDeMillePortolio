@@ -7,6 +7,7 @@ export default class MovieView {
     movieDetailsContainer.classList.add('detailsContainer');
     
     const poster = document.createElement("IMG");
+    poster.classList.add("movie-poster")
     poster.setAttribute("src", `https://image.tmdb.org/t/p/w500${movieID.poster_path}`)
     
     // Creat the elements to add to the HTML

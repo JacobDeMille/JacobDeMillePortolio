@@ -1,8 +1,14 @@
+// Media Querie mix in to use and only have to define once
+@mixin MQ($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+
 body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  max-width: 960px;
   margin: 0 auto;
   justify-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -13,6 +19,10 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: darkslategrey;
   grid-column: span 2;
+  @include MQ(760px) {
+    text-align: left;
+    margin-left: 1em;
+  }
 }
 
 .form-container {
@@ -23,8 +33,11 @@ body {
   border: 2px solid black;
   border-radius: 5px;
   background-color: #f2f2f2;
-  width: 100%;
-  max-width: 500px;
+  width: 80%;
+  max-width: 700px;
+  @include MQ(550px) {
+    width: 0 auto;
+  }
 }
 
 .form-row {
@@ -77,12 +90,29 @@ p {
   select {
     width: 100%;
   }
+  @include MQ(580px) {
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .yearSpan {
   display: grid;
   grid-template-columns: auto auto;
   gap: 1em;
+}
+
+.movie-poster {
+  animation: fadeIn 1.25s ease-in-out;
+  width: 500px;
+  @include MQ(650px) {
+    width: 400px;
+  }
+  @include MQ(450px) {
+    width: 300px;
+  }
 }
 
 /* This is the style of the error messages */
@@ -100,4 +130,9 @@ p {
 
 .error.active {
   padding: 0.3em;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
