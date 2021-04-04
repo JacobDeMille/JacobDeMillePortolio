@@ -47,18 +47,17 @@ export default class MovieController {
     console.log(ratingsList);
     console.log(`The number of pages from the results: ${ratingsList.total_pages}`)
 
+    // Get the number of pages for the specified rating and Genre
     let numberOfPages = ratingsList.total_pages;
+    // Call the movie rating function a second time with the parameter 
+    // for the number of pages.
     const ratingsListRandomPage = await this.movie.getMovieByRating(this.rating, this.genre, numberOfPages)
     console.log("")
     console.log("This is the NEW list for the Ratings, specifying the number of pages to give to the random page function")
     console.log(ratingsListRandomPage)
 
+    // Render the movie list
     this.renderMovieList(ratingsListRandomPage);
-
-    
-    
-    
-
   }
 
   async renderMovieList(ratingsListRandomPage) {
