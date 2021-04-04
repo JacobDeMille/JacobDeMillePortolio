@@ -1,4 +1,6 @@
-import { getJSON } from "./utilities.js";
+import {
+  getJSON
+} from "./utilities.js";
 import Movie from "./Movie.js";
 import MovieController from "./MovieController.js";
 
