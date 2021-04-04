@@ -1,5 +1,6 @@
 import Movie from "./Movie.js";
 import MovieView from "./MovieView.js";
+import LocalStorage from './local-storage.js';
 
 export default class MovieController {
   constructor(parent) {
@@ -39,12 +40,12 @@ export default class MovieController {
     
       // Get a the genre specified by the user
     this.genre = document.getElementById("genre").value;
-    // console.log(this.genre)
+    /*console.log(this.genre)
       // Get a list of movies by Genre
-    // const newMovie = await this.movie.getMovieByGenre(this.genre, this.rating);
-    // console.log("This is the list for the Genre specified")
-    // console.log(newMovie);
-    // this.moviesByRating(newMovie)
+    const newMovie = await this.movie.getMovieByGenre(this.genre, this.rating);
+    console.log("This is the list for the Genre specified")
+    console.log(newMovie);
+    this.moviesByRating(newMovie)*/
 
 
       // Get a rating specified by the user
@@ -62,23 +63,44 @@ export default class MovieController {
     console.log("This is the NEW list for the Ratings, specifying the number of pages to give to the random page function")
     console.log(ratingsListRandomPage)
 
+    this.renderMovieList(ratingsListRandomPage);
 
     
     
+    
+
+  }
+
+  async renderMovieList(ratingsListRandomPage) {
     // Get a random number to select a secific movie in the list of 20 movies returned in the list
     const randomNumber = Math.floor(Math.random() * 20);
+
     console.log(`Random number to get the random movie: ${randomNumber}`)
     console.log("")
     console.log(`The selected movie to use and dispaly to the user`)
     console.log(ratingsListRandomPage.results[randomNumber]);
-    console.log(`Movie ID number: ${ratingsListRandomPage.results[randomNumber].id}`);
-      // Get the ID for the Specific movie that is to be desplayed.
-    const newMovieID = ratingsListRandomPage.results[randomNumber];
-    console.log(ratingsListRandomPage.results[randomNumber])
-    console.log(newMovieID)
-      // Call renderMovieList to show the information to the user. 
-    this.movieView.renderMovieList(newMovieID)
-    
+
+
+    const movieID = ratingsListRandomPage.results[randomNumber];
+    console.log(`This is the movie ID number: ${movieID}`)
+
+    if (localStorage.getItem(movieID.id) != null) {
+      this.moviesByGenre()
+
+    } 
+    if (localStorage.getItem(movieID.id) == null) {
+      localStorage.setItem(movieID.title, movieID.id)
+        // Get the ID for the Specific movie that is to be desplayed.
+      const newMovieID = ratingsListRandomPage.results[randomNumber];
+      console.log(ratingsListRandomPage.results[randomNumber])
+      console.log(newMovieID)
+        // Call renderMovieList to show the information to the user. 
+      this.movieView.renderMovieList(newMovieID)
+
+      
+    }
+
+      
   }
 
 }

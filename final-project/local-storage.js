@@ -1,22 +1,22 @@
-export default class localStorage {
+export default class LocalStorage {
   constructor() {
-    this.storageList = [];
+    this._storageList = [];
   }
 
   getList() {
-    return this.storageList;
+    return this._storageList;
   }
 
   clearList() {
-    this.storageList = [];
+    this._storageList = [];
   }
 
   addItem(itemObj) {
-    this.storageList.push(itemObj);
+    this._storageList.push(itemObj);
   }
 
   removeItem(id) {
-    const list = this.storageList;
+    const list = this._storageList;
     for (let i = 0; i < list.length; i++) {
       if (list[i].id == id) {
         console.log(list)
