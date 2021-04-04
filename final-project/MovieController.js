@@ -24,17 +24,7 @@ export default class MovieController {
     this.moviesByGenre();
   }
 
-  async getMovieDetails() {
-    
-
-    // this.parentElement.innerHTML = `<li>Loading...</li>`;
-    // // const movieList = await this.movie.getMovieDetails(this.genre)
-    // // console.log(movieList)
-    // const fightTime = await this.movie.getMovieDetails(this.fightClub)
-    // console.log(fightTime)
-    // console.log(fightTime.poster_path)
-    // this.movieView.renderMovieList(fightTime, this.parentElement);
-  }
+  
 
   async moviesByGenre() {
     
@@ -84,12 +74,16 @@ export default class MovieController {
     const movieID = ratingsListRandomPage.results[randomNumber];
     console.log(`This is the movie ID number: ${movieID}`)
 
-    if (localStorage.getItem(movieID.id) != null) {
+    // If the Movie ID is in the local storage, then get a new movie by 
+    // calling the moviesByGenre again. 
+    if (localStorage.getItem(movieID.id) !== null) {
       this.moviesByGenre()
 
     } 
-    if (localStorage.getItem(movieID.id) == null) {
-      localStorage.setItem(movieID.title, movieID.id)
+    // If the Movie ID are not in the local storage, then add it to 
+    // local storage and call the render movie list.
+    if (localStorage.getItem(movieID.id) === null) {
+      localStorage.setItem(movieID.id, movieID.title )
         // Get the ID for the Specific movie that is to be desplayed.
       const newMovieID = ratingsListRandomPage.results[randomNumber];
       console.log(ratingsListRandomPage.results[randomNumber])
