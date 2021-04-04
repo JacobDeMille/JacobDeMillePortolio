@@ -27,8 +27,8 @@ body {
   border: 2px solid black;
   border-radius: 5px;
   background-color: #f2f2f2;
-  width: 460px;
-  max-width: 460px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .form-row {
@@ -75,6 +75,27 @@ p {
 
 .detailsContainer {
   text-align: center;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+}
+
+.container label {
+  width: 100%;
+}
+
+.container select {
+  width: 100%;
+}
+
+.yearSpan {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  gap: 1em;
 }
 
 /* This is the style of the error messages */

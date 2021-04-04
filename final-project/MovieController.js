@@ -50,9 +50,9 @@ export default class MovieController {
     // Call the movie rating function a second time with the parameter 
     // for the number of pages.
     const ratingsListRandomPage = await this.movie.getMovieByRating(this.rating, this.genre, numberOfPages)
-    // console.log("")
-    // console.log("This is the NEW list for the Ratings, specifying the number of pages to give to the random page function")
-    // console.log(ratingsListRandomPage)
+    console.log("")
+    console.log("This is the NEW list for the Ratings, specifying the number of pages to give to the random page function")
+    console.log(ratingsListRandomPage)
 
     // Render the movie list
     this.renderMovieList(ratingsListRandomPage);
@@ -61,10 +61,10 @@ export default class MovieController {
   async renderMovieList(ratingsListRandomPage) {
     // Get a random number to select a secific movie in the list of 20 movies returned in the list
     const randomNumber = Math.floor(Math.random() * 20);
-    // console.log(`Random number to get the random movie: ${randomNumber}`)
-    // console.log("")
-    // console.log(`The selected movie to use and dispaly to the user`)
-    // console.log(ratingsListRandomPage.results[randomNumber]);
+    console.log(`Random number to get the random movie: ${randomNumber}`)
+    console.log("")
+    console.log(`The selected movie to use and dispaly to the user`)
+    console.log(ratingsListRandomPage.results[randomNumber]);
 
     const movieID = ratingsListRandomPage.results[randomNumber];
     // console.log(`This is the movie ID number: ${movieID}`)
