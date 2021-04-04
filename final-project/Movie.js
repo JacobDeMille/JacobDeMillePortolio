@@ -10,21 +10,16 @@ export default class Movie {
   // With the specific ID given from the Movie Controller, after it has been chosen and 
   // varified that it has not already been chosen before, we make a final call to the API
   // to get all of the details for the specific movie to then desplay to the user. 
-  async getMovieDetails(movieID) {
-    const details = `https://api.themoviedb.org/3/movie/${movieID}?api_key=651dd06cfce5f626304367d5d45cb689&include_video=true&append_to_response=videos`;
-    this._details = getJSON(details);
-    console.log(this._details);
-    return this._details;
-  }
-  
-  // Get a list of movies that are in the Genre specified by the user
-  // async getMovieByGenre(genre, rating) {
-  //   const page = getRandomPage();
-  //   const genreList = `https://api.themoviedb.org/3/discover/movie?api_key=651dd06cfce5f626304367d5d45cb689&with_genres=${genre}&certification_country=US&certification.lte=${rating}&certification.gte=${rating}&language=en-US&include_adult=false&include_video=true&page=${page}`;
-  //   this._genre = getJSON(genreList);
-  //   console.log(this._genre);
-  //   return this._genre;
+
+  /* NO LONGER USED IN THE PROGRAM */
+          // This could be used a future time though for a different function
+  // async getMovieDetails(movieID) {
+  //   const details = `https://api.themoviedb.org/3/movie/${movieID}?api_key=651dd06cfce5f626304367d5d45cb689&include_video=true&append_to_response=videos`;
+  //   this._details = getJSON(details);
+  //   console.log(this._details);
+  //   return this._details;
   // }
+  
 
   // Get a list of movies that are in the Ratings specified by the user
   async getMovieByRating(rating, genre, numberOfPages=1) {
