@@ -29,7 +29,7 @@ export default class Movie {
     // console.log("")
     // console.log(`The page number for this query will be: ${page}`)
 
-    const ratingList = `https://api.themoviedb.org/3/discover/movie?api_key=651dd06cfce5f626304367d5d45cb689&with_genres=${genre}&certification_country=US&certification.lte=${rating}&certification.gte=${rating}&language=en-US&include_adult=false&include_video=trueprimary_release_date.gte=${startYear}-01-01&primary_release_date.lte=${endYear}-12-31&page=${page}`;
+    const ratingList = `https://api.themoviedb.org/3/discover/movie?api_key=651dd06cfce5f626304367d5d45cb689&with_genres=${genre}&certification_country=US&certification.lte=${rating}&certification.gte=${rating}&language=en-US&include_adult=false&include_video=true&primary_release_date.gte=${startYear}-01-01&primary_release_date.lte${endYear}-12-31&page=${page}`;
     this._ratings = getJSON(ratingList);
     console.log(this._ratings);
     return this._ratings;

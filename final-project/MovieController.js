@@ -46,11 +46,13 @@ export default class MovieController {
     // Get the End Year for the year span
     this.yearEnd = document.getElementById("endYear").value;
 
+    console.log("Call for a movie list with start and end years")
     const ratingsList = await this.movie.getMovieByRating(this.rating, this.genre, this.yearStart, this.yearEnd)
-    // console.log("")
-    // console.log("This is the list for the Ratings specified in the Genre")
-    // console.log(ratingsList);
-    // console.log(`The number of pages from the results: ${ratingsList.total_pages}`)
+    console.log("")
+    console.log("This is the list for the Ratings specified in the Genre")
+    console.log(ratingsList);
+    console.log(`The number of pages from the results: ${ratingsList.total_pages}`)
+    
 
     // Get the number of pages for the specified rating and Genre
     let numberOfPages = ratingsList.total_pages;
@@ -67,7 +69,9 @@ export default class MovieController {
 
   async renderMovieList(ratingsListRandomPage) {
     // Get a random number to select a secific movie in the list of 20 movies returned in the list
-    const randomNumber = Math.floor(Math.random() * 20);
+    let numberOfMovies = ratingsListRandomPage.results.length;
+    console.log(numberOfMovies)
+    const randomNumber = Math.floor(Math.random() * numberOfMovies);
     console.log(`Random number to get the random movie: ${randomNumber}`)
     console.log("")
     console.log(`The selected movie to use and dispaly to the user`)
