@@ -39,6 +39,8 @@ export default class MovieController {
       // Get a rating specified by the user
     this.rating = document.getElementById("rating").value;
     // Get a new list of the movies that have a specific rating in the same Genre
+
+    this.yearStart = document.getElementById("startYear")
     const ratingsList = await this.movie.getMovieByRating(this.rating, this.genre)
     // console.log("")
     // console.log("This is the list for the Ratings specified in the Genre")
