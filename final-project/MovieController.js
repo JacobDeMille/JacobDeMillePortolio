@@ -8,7 +8,8 @@ export default class MovieController {
     this.parentElement = null;
     this.genre = 0;
     this.rating = String;
-    this.fightClub = 550; // 550 = Fight club. Using this right now for testing.
+    this.yearStart = 1905;
+    this.yearEnd = 2021;
     this.movie = new Movie();
     this.movieView = new MovieView();
   }
@@ -40,8 +41,12 @@ export default class MovieController {
     this.rating = document.getElementById("rating").value;
     // Get a new list of the movies that have a specific rating in the same Genre
 
-    this.yearStart = document.getElementById("startYear")
-    const ratingsList = await this.movie.getMovieByRating(this.rating, this.genre)
+    // Get the Start Year for year span
+    this.yearStart = document.getElementById("startYear").value;
+    // Get the End Year for the year span
+    this.yearEnd = document.getElementById("endYear").value;
+
+    const ratingsList = await this.movie.getMovieByRating(this.rating, this.genre, this.yearStart, this.yearEnd)
     // console.log("")
     // console.log("This is the list for the Ratings specified in the Genre")
     // console.log(ratingsList);
@@ -51,7 +56,7 @@ export default class MovieController {
     let numberOfPages = ratingsList.total_pages;
     // Call the movie rating function a second time with the parameter 
     // for the number of pages.
-    const ratingsListRandomPage = await this.movie.getMovieByRating(this.rating, this.genre, numberOfPages)
+    const ratingsListRandomPage = await this.movie.getMovieByRating(this.rating, this.genre, this.yearStart, this.yearEnd, numberOfPages)
     console.log("")
     console.log("This is the NEW list for the Ratings, specifying the number of pages to give to the random page function")
     console.log(ratingsListRandomPage)
