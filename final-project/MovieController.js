@@ -17,7 +17,7 @@ export default class MovieController {
   async init() {
     this.parentElement = document.querySelector(this.parent);
     this.movieDetails();
-
+    
   }
 
   async initGenre() {
@@ -26,8 +26,8 @@ export default class MovieController {
   }
 
   async moviesByGenre() {
-
-    // Get a the genre specified by the user
+    
+      // Get a the genre specified by the user
     this.genre = document.getElementById("genre").value;
     /*console.log(this.genre)
       // Get a list of movies by Genre
@@ -37,7 +37,7 @@ export default class MovieController {
     this.moviesByRating(newMovie)*/
 
 
-    // Get a rating specified by the user
+      // Get a rating specified by the user
     this.rating = document.getElementById("rating").value;
     // Get a new list of the movies that have a specific rating in the same Genre
 
@@ -52,7 +52,7 @@ export default class MovieController {
     console.log("This is the list for the Ratings specified in the Genre")
     console.log(ratingsList);
     console.log(`The number of pages from the results: ${ratingsList.total_pages}`)
-
+    
 
     // Get the number of pages for the specified rating and Genre
     let numberOfPages = ratingsList.total_pages;
@@ -76,7 +76,7 @@ export default class MovieController {
     console.log("")
     console.log(`The selected movie to use and dispaly to the user`)
     console.log(ratingsListRandomPage.results[randomNumber]);
-
+    
 
     const movieID = ratingsListRandomPage.results[randomNumber];
     // console.log(`This is the movie ID number: ${movieID}`)
@@ -87,16 +87,16 @@ export default class MovieController {
       // console.log("Movie has already been given. Lets get another one.")
       this.moviesByGenre()
 
-    }
+    } 
     // If the Movie ID are not in the local storage, then add it to 
     // local storage and call the render movie list.
     if (localStorage.getItem(movieID.id) === null) {
-      localStorage.setItem(movieID.id, movieID.title)
-      // Get the ID for the Specific movie that is to be desplayed.
+      localStorage.setItem(movieID.id, movieID.title )
+        // Get the ID for the Specific movie that is to be desplayed.
       const newMovieID = ratingsListRandomPage.results[randomNumber];
       // console.log(ratingsListRandomPage.results[randomNumber])
       // console.log(newMovieID)
-      // Call renderMovieList to show the information to the user. 
+        // Call renderMovieList to show the information to the user. 
       this.movieView.renderMovieList(newMovieID)
     }
   }
