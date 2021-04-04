@@ -24,8 +24,6 @@ export default class MovieController {
     this.moviesByGenre();
   }
 
-  
-
   async moviesByGenre() {
     
       // Get a the genre specified by the user
@@ -89,11 +87,6 @@ export default class MovieController {
       console.log(newMovieID)
         // Call renderMovieList to show the information to the user. 
       this.movieView.renderMovieList(newMovieID)
-
-      
     }
-
-      
   }
-
 }
